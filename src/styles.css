@@ -36,5 +36,20 @@ body {
     right: 0px;
 }
 
+.large{
+}
+
+.medium{
+
+}
+
+.small{
+
+}
+
+.space{
+    flex: 1;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
