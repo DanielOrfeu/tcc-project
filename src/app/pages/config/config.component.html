@@ -4,27 +4,27 @@
     <div class="item">
         <span>Cor de fundo:</span>
         <div class="space"></div>
-        <button mat-raised-button color="primary">Branco</button>
-        <button mat-raised-button color="primary">Azul</button>
-        <button mat-raised-button color="primary">Verde</button>
-        <button mat-raised-button color="primary">Vemrelho</button>
-        <button mat-raised-button color="primary">Laranja</button>
-        <button mat-raised-button color="primary">Amarelo</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('white')">Branco</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('blue')">Azul</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('green')">Verde</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('red')">Vemrelho</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('orange')">Laranja</button>
+        <button mat-raised-button color="primary" (click)="changeBackgroundColor('yellow')">Amarelo</button>
     </div>
 
     <div class="item">
         <span>Cor da fonte:</span>
         <div class="space"></div>
-        <button mat-raised-button color="primary">Branca</button>
-        <button mat-raised-button color="primary">Preta</button>
+        <button mat-raised-button color="primary" (click)="changeFontColor('white')">Branca</button>
+        <button mat-raised-button color="primary" (click)="changeFontColor('black')">Preta</button>
     </div>
 
     <div class="item">
         <span>Tamanho de texto de fala:</span>
         <div class="space"></div>
-        <button mat-raised-button color="primary">Pequeno</button>
-        <button mat-raised-button color="primary">Médio</button>
-        <button mat-raised-button color="primary">Grande</button>
+        <button mat-raised-button color="primary" (click)="changeFontSize('small')" >Pequeno</button>
+        <button mat-raised-button color="primary" (click)="changeFontSize('medium')">Médio</button>
+        <button mat-raised-button color="primary" (click)="changeFontSize('large')">Grande</button>
     </div>
 
     <span class="material-icons" routerLink="/">undo</span>
