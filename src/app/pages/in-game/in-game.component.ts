@@ -1,10 +1,4 @@
-import { Component, OnInit, NgModule  } from '@angular/core';
-
-@NgModule({
-  imports: [
-
-  ]
-})
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-in-game',
@@ -16,6 +10,10 @@ export class InGameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickAlert(number:string){
+    alert(number)
   }
 
 }

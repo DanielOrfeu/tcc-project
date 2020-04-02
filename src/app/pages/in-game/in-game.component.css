@@ -17,9 +17,5 @@
     border-width: medium;
 }
 #square{
-    width: 180px;
-    height: 180px;
-    border-style: solid;
-    border-width: medium;
-    border-color: darkgray;
+    background-color: darkgray;
 }
