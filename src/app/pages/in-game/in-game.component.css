@@ -1,0 +1,25 @@
+#help{
+    width: 100%;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+}
+#home{
+    width: 100%;
+    top: 20px;
+    left: 740px;
+    position: absolute;
+}
+.table{
+    width: 550px;
+    height: 550px;
+    border-style: solid;
+    border-width: medium;
+}
+#square{
+    width: 180px;
+    height: 180px;
+    border-style: solid;
+    border-width: medium;
+    border-color: darkgray;
+}

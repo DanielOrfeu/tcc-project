@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "tcc-project"
+  "defaultProject": "tcc-project",
+  "cli": {
+    "analytics": "04434bec-a531-413f-b53d-a354d4071ea2"
+  }
 }
