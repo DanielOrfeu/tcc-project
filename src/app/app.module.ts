@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { InGameComponent } from './pages/in-game/in-game.component';
+import { SquareComponent } from './pages/square/square.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { InGameComponent } from './pages/in-game/in-game.component';
     MainComponent,
     ConfigComponent,
     InGameComponent,
+    SquareComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

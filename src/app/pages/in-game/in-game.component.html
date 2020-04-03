@@ -1,19 +1,21 @@
 <div class="container">
-    <span class="material-icons" id="help">help_outline</span>
+    <div style="display: flex; flex-direction: row;">
+        <span class="material-icons" id="help">help_outline</span>
+        <div class="table">
+            <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+                <mat-grid-tile id="square"><square></square></mat-grid-tile>
+              </mat-grid-list>
+        </div>
     <span class="material-icons" id="home" routerLink="/">house</span>
-    <div class="table">
-        <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-            <mat-grid-tile id="square"(click)="clickAlert('1')">
-                    1
-            </mat-grid-tile>
-            <mat-grid-tile id="square">2</mat-grid-tile>
-            <mat-grid-tile id="square">3</mat-grid-tile>
-            <mat-grid-tile id="square">4</mat-grid-tile>
-            <mat-grid-tile id="square">5</mat-grid-tile>
-            <mat-grid-tile id="square">6</mat-grid-tile>
-            <mat-grid-tile id="square">7</mat-grid-tile>
-            <mat-grid-tile id="square">8</mat-grid-tile>
-            <mat-grid-tile id="square">9</mat-grid-tile>
-          </mat-grid-list>
+
     </div>
+
 </div>

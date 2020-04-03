@@ -1,4 +1,4 @@
-#help{
+/* #help{
     width: 100%;
     top: 20px;
     left: 20px;
@@ -9,12 +9,14 @@
     top: 20px;
     left: 740px;
     position: absolute;
-}
+} */
 .table{
     width: 550px;
     height: 550px;
     border-style: solid;
     border-width: medium;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 #square{
     background-color: darkgray;
