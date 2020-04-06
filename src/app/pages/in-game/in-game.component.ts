@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { EnumsModule } from "../../components/enums/enums.module";
 
 @Component({
   selector: "app-in-game",
@@ -7,50 +8,51 @@ import { Component, OnInit } from "@angular/core";
 })
 export class InGameComponent implements OnInit {
   top = {
-      one: "",
-      two: "",
-      three: "",
-      four: "",
-      five: "",
-      six: "",
-      seven: "",
-      eight: "",
-      nine: "",
+      one: {title:"", value:""},
+      two: {title:"", value:""},
+      three: {title:"", value:""},
+      four: {title:"", value:""},
+      five: {title:"", value:""},
+      six: {title:"", value:""},
+      seven: {title:"", value:""},
+      eight: {title:"", value:""},
+      nine: {title:"", value:""}
     }
   right = {
-      one: "",
-      two: "",
-      three: "",
-      four: "",
-      five: "",
-      six: "",
-      seven: "",
-      eight: "",
-      nine: "",
+      one: {title:"", value:""},
+      two: {title:"", value:""},
+      three: {title:"", value:""},
+      four: {title:"", value:""},
+      five: {title:"", value:""},
+      six: {title:"", value:""},
+      seven: {title:"", value:""},
+      eight: {title:"", value:""},
+      nine: {title:"", value:""},
     }
   bottom = {
-      one: "",
-      two: "",
-      three: "",
-      four: "",
-      five: "",
-      six: "",
-      seven: "",
-      eight: "",
-      nine: "",
+      one: {title:"", value:""},
+      two: {title:"", value:""},
+      three: {title:"", value:""},
+      four: {title:"", value:""},
+      five: {title:"", value:""},
+      six: {title:"", value:""},
+      seven: {title:"", value:""},
+      eight: {title:"", value:""},
+      nine: {title:"", value:""},
     }
   left = {
-      one: "",
-      two: "",
-      three: "",
-      four: "",
-      five: "",
-      six: "",
-      seven: "",
-      eight: "",
-      nine: "",
+      one: {title:"", value:""},
+      two: {title:"", value:""},
+      three: {title:"", value:""},
+      four: {title:"", value:""},
+      five: {title:"", value:""},
+      six: {title:"", value:""},
+      seven: {title:"", value:""},
+      eight: {title:"", value:""},
+      nine: {title:"", value:""},
     }
   respValue = [];
+  respTitle = [];
 
   constructor() {
     this.createRandomValue();
@@ -76,149 +78,150 @@ export class InGameComponent implements OnInit {
   }
 
   createValues() {
+
     this.top = {
-      one: this.respValue[0],
-      two: this.respValue[0],
-      three: this.respValue[0],
-      four: this.respValue[0],
-      five: this.respValue[0],
-      six: this.respValue[0],
-      seven: this.respValue[0],
-      eight: this.respValue[0],
-      nine: this.respValue[0],
+      one: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      two: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      three: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      four: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      five: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      six: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      seven: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      eight: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
+      nine: {title: "this.takeRandomTitle(this.respValue[0])",value:this.respValue[0]},
     };
     this.right = {
-      one: this.respValue[1],
-      two: this.respValue[1],
-      three: this.respValue[1],
-      four: this.respValue[1],
-      five: this.respValue[1],
-      six: this.respValue[1],
-      seven: this.respValue[1],
-      eight: this.respValue[1],
-      nine: this.respValue[1],
+      one: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      two: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      three: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      four: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      five: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      six: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      seven: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      eight: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
+      nine: {title: "this.takeRandomTitle(this.respValue[1])",value:this.respValue[1]},
     };
     this.bottom = {
-      one: this.respValue[2],
-      two: this.respValue[2],
-      three: this.respValue[2],
-      four: this.respValue[2],
-      five: this.respValue[2],
-      six: this.respValue[2],
-      seven: this.respValue[2],
-      eight: this.respValue[2],
-      nine: this.respValue[2],
+      one: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      two: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      three: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      four: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      five: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      six: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      seven: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      eight: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
+      nine: {title: "this.takeRandomTitle(this.respValue[2])",value:this.respValue[2]},
     };
     this.left = {
-      one: this.respValue[3],
-      two: this.respValue[3],
-      three: this.respValue[3],
-      four: this.respValue[3],
-      five: this.respValue[3],
-      six: this.respValue[3],
-      seven: this.respValue[3],
-      eight: this.respValue[3],
-      nine: this.respValue[3],
+      one: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      two: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      three: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      four: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      five: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      six: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      seven: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      eight: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
+      nine: {title: "this.takeRandomTitle(this.respValue[3])",value:this.respValue[3]},
     };
   }
 
   compareSquare(square: string){
     switch (square) {
       case "one":
-        if(this.right["one"] === this.left["two"]){
+        if(this.right["one"].value === this.left["two"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["one"] === this.top["four"]){
+        if(this.bottom["one"].value === this.top["four"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
       
       case "two":
-        if(this.right["one"] === this.left["two"]){
+        if(this.right["one"].value === this.left["two"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["two"] === this.left["three"]){
+        if(this.right["two"].value === this.left["three"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["two"] === this.top["five"]){
+        if(this.bottom["two"].value === this.top["five"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
 
       case "three":
-        if(this.right["two"] === this.left["three"]){
+        if(this.right["two"].value === this.left["three"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["three"] === this.top["six"]){
+        if(this.bottom["three"].value === this.top["six"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
       
       case "four":
-        if(this.bottom["one"] === this.top["four"]){
+        if(this.bottom["one"].value === this.top["four"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["four"] === this.left["five"]){
+        if(this.right["four"].value === this.left["five"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["four"] === this.top["seven"]){
+        if(this.bottom["four"].value === this.top["seven"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
 
       case "five":
-        if(this.bottom["two"] === this.top["five"]){
+        if(this.bottom["two"].value === this.top["five"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["four"] === this.left["five"]){
+        if(this.right["four"].value === this.left["five"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["five"] === this.left["six"]){
+        if(this.right["five"].value === this.left["six"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["five"] === this.top["eight"]){
+        if(this.bottom["five"].value === this.top["eight"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
       
       case "six":
-        if(this.bottom["three"] === this.top["six"]){
+        if(this.bottom["three"].value === this.top["six"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["five"] === this.left["six"]){
+        if(this.right["five"].value === this.left["six"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.bottom["six"] === this.top["nine"]){
+        if(this.bottom["six"].value === this.top["nine"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
 
       case "seven":
-        if(this.bottom["four"] === this.top["seven"]){
+        if(this.bottom["four"].value === this.top["seven"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["seven"] === this.left["eight"]){
+        if(this.right["seven"].value === this.left["eight"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
 
       case "eight":
-        if(this.bottom["five"] === this.top["eight"]){
+        if(this.bottom["five"].value === this.top["eight"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["seven"] === this.left["eight"]){
+        if(this.right["seven"].value === this.left["eight"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["eight"] === this.left["nine"]){
+        if(this.right["eight"].value === this.left["nine"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
 
       case "nine":
-        if(this.bottom["six"] === this.top["nine"]){
+        if(this.bottom["six"].value === this.top["nine"].value){
           alert("parabéns você uniu os quadrados");
         }
-        if(this.right["eight"] === this.left["nine"]){
+        if(this.right["eight"].value === this.left["nine"].value){
           alert("parabéns você uniu os quadrados");
         }
         break;
@@ -229,14 +232,21 @@ export class InGameComponent implements OnInit {
   }
 
   createRandomValue(){
-
     while (this.respValue.length < 4) {
       var random = Math.floor(Math.random() * (10 + 0));
 
       if (this.respValue.indexOf(random) == -1)
       this.respValue.push(random);
     }
-    console.log("respValue", this.respValue);
+
+  }
+
+  takeRandomTitle(value:number): string{
+    var valueString = value.toString();
+    var enumMax = EnumsModule.Expressions[valueString].length - 1;
+    var random = Math.floor(Math.random() * (enumMax + 0));
+
+    return EnumsModule.Expressions[valueString][random];
   }
 
 }
