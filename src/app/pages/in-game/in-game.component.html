@@ -3,16 +3,133 @@
         <span class="material-icons" id="help">help_outline</span>
         <div class="table">
             <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-                <mat-grid-tile id="square"><square></square></mat-grid-tile>
-              </mat-grid-list>
+                <mat-grid-tile class="square"(click)="clickRotation('one')">
+                    <div id="top">
+                        {{top.one}}
+                    </div>
+                    <div id="right">
+                        {{right.one}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.one}}
+                    </div>
+                    <div id="left">
+                        {{left.one}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('two')">
+                    <div id="top">
+                        {{top.two}}
+                    </div>
+                    <div id="right">
+                        {{right.two}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.two}}
+                    </div>
+                    <div id="left">
+                        {{left.two}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('three')">
+                    <div id="top">
+                        {{top.three}}
+                    </div>
+                    <div id="right">
+                        {{right.three}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.three}}
+                    </div>
+                    <div id="left">
+                        {{left.three}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('four')">
+                    <div id="top">
+                        {{top.four}}
+                    </div>
+                    <div id="right">
+                        {{right.four}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.four}}
+                    </div>
+                    <div id="left">
+                        {{left.four}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('five')">
+                    <div id="top">
+                        {{top.five}}
+                    </div>
+                    <div id="right">
+                        {{right.five}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.five}}
+                    </div>
+                    <div id="left">
+                        {{left.five}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('six')">
+                    <div id="top">
+                        {{top.six}}
+                    </div>
+                    <div id="right">
+                        {{right.six}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.six}}
+                    </div>
+                    <div id="left">
+                        {{left.six}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('seven')">
+                    <div id="top">
+                        {{top.seven}}
+                    </div>
+                    <div id="right">
+                        {{right.seven}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.seven}}
+                    </div>
+                    <div id="left">
+                        {{left.seven}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('eight')">
+                    <div id="top">
+                        {{top.eight}}
+                    </div>
+                    <div id="right">
+                        {{right.eight}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.eight}}
+                    </div>
+                    <div id="left">
+                        {{left.eight}}
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile class="square"(click)="clickRotation('nine')">
+                    <div id="top">
+                        {{top.nine}}
+                    </div>
+                    <div id="right">
+                        {{right.nine}}
+                    </div>
+                    <div id="bottom">
+                        {{bottom.nine}}
+                    </div>
+                    <div id="left">
+                        {{left.nine}}
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
         </div>
     <span class="material-icons" id="home" routerLink="/">house</span>
 

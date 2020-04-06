@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { InGameComponent } from './pages/in-game/in-game.component';
-import { SquareComponent } from './pages/square/square.component';
+import { SquareComponent } from './components/square/square.component';
 import { SelectModeComponent } from './pages/select-mode/select-mode.component';
 
 @NgModule({

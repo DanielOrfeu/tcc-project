@@ -13,11 +13,27 @@
 .table{
     width: 550px;
     height: 550px;
-    border-style: solid;
-    border-width: medium;
-    margin-left: 30px;
-    margin-right: 30px;
 }
-#square{
+.square{
+    border-width: medium;
+    border-style: solid;
+    border-color: brown;
     background-color: darkgray;
+}
+
+#bottom {
+    bottom: 2px;
+    position: absolute;
+}
+#left {
+    left: 2px;
+    position: absolute;
+}
+#top {
+    top: 2px;
+    position: absolute;
+}
+#right {
+    right: 2px;
+    position: absolute;
 }
