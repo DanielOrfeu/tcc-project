@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, HostBinding} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { backgroundColor, fontColor, fontSize } from '../../constants/config.constant'
 
 @Component({
   selector: 'app-config',
@@ -8,22 +9,23 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ConfigComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
+
+  background = backgroundColor
+  color = fontColor
+  size = fontSize
   
   ngOnInit(): void {
   }
 
-
-  @HostBinding("attr.style")
   changeBackgroundColor(color:string){
-    document.body.style.setProperty('background-color', color);
+    document.body.style.backgroundColor = color;
   }
 
   changeFontColor(color:string){
-    document.body.style.setProperty('color', color);
+    document.body.style.color = color;
   }
 
   changeFontSize(size:string){
-    console.log(size)
-    document.body.style.setProperty('font-size', size);
+    document.body.style.fontSize = size;
   }
 }
