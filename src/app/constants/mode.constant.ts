@@ -1,9 +1,9 @@
-import { NumbersEXP } from "./numbers.constant"
+import { NumbersEXP, Expressions } from "./numbers.constant"
 
 export const Modes = [
     {
         title: "Expressão aritimética",
-        specs: NumbersEXP
+        specs: [NumbersEXP, Expressions]
     },
     {
         title: "Expressão linguística",

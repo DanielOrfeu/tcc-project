@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NumbersEXP, Expressions } from 'src/app/constants/numbers.constant';
+import { Modes } from '../../constants/mode.constant'
 
 @Component({
   selector: 'app-select-mode',
@@ -9,6 +10,7 @@ import { NumbersEXP, Expressions } from 'src/app/constants/numbers.constant';
 })
 export class SelectModeComponent implements OnInit {
  router: any;
+ modes = Modes;
   constructor(router: Router) { 
     this.router = router;    
   }
@@ -16,18 +18,10 @@ export class SelectModeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  chooseGameMode(mode:string){
-    switch (mode) {
-      case "NumbersEXP":
-        console.log("aqui")
-        this.router.navigateByUrl('/ingame',{
-          state: [NumbersEXP, Expressions]
-        })
-        break;
-    
-      default:
-        break;
-    }
+  chooseGameMode(specs: any){
+      this.router.navigateByUrl('/ingame',{
+        state: specs
+      })
   }
 
 }

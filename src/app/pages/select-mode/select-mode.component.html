@@ -4,24 +4,9 @@
 
       <div style="margin-bottom: 20px;" class="table">
         <mat-grid-list cols="2" rowHeight="2:2">
-            <mat-grid-tile>
-                <span>botão temporário</span>
-                <span class="material-icons" (click)="chooseGameMode('NumbersEXP')" >play_circle_outline</span>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <span>
-                    Expressões Liguísticas
-                </span>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <span>
-                    Apenas formas
-                </span>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <span>
-                    Jogo misto
-                </span>
+            <mat-grid-tile *ngFor="let mode of modes; let i = index">
+                <span>{{mode.title}}</span>
+                <span class="material-icons" (click)="chooseGameMode(mode.specs)" >play_circle_outline</span>
             </mat-grid-tile>
           </mat-grid-list>
     </div>
