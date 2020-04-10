@@ -3,145 +3,15 @@
         <span class="material-icons" id="help">help_outline</span>
         <div class="table">
             <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-                <mat-grid-tile class="square" (click)="clickRotation('one')">
+                <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
                     <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.one.value}}
-                    </div>
-                    <div id="right">
-                        {{right.one.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.one.value}}
-                    </div>
-                    <div id="left">
-                        {{left.one.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('two')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.two.value}}
-                    </div>
-                    <div id="right">
-                        {{right.two.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.two.value}}
-                    </div>
-                    <div id="left">
-                        {{left.two.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('three')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.three.value}}
-                    </div>
-                    <div id="right">
-                        {{right.three.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.three.value}}
-                    </div>
-                    <div id="left">
-                        {{left.three.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('four')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.four.value}}
-                    </div>
-                    <div id="right">
-                        {{right.four.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.four.value}}
-                    </div>
-                    <div id="left">
-                        {{left.four.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('five')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.five.value}}
-                    </div>
-                    <div id="right">
-                        {{right.five.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.five.value}}
-                    </div>
-                    <div id="left">
-                        {{left.five.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('six')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.six.value}}
-                    </div>
-                    <div id="right">
-                        {{right.six.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.six.value}}
-                    </div>
-                    <div id="left">
-                        {{left.six.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('seven')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.seven.value}}
-                    </div>
-                    <div id="right">
-                        {{right.seven.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.seven.value}}
-                    </div>
-                    <div id="left">
-                        {{left.seven.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('eight')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.eight.value}}
-                    </div>
-                    <div id="right">
-                        {{right.eight.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.eight.value}}
-                    </div>
-                    <div id="left">
-                        {{left.eight.value}}
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile class="square"(click)="clickRotation('nine')">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div id="top">
-                        {{top.nine.value}}
-                    </div>
-                    <div id="right">
-                        {{right.nine.value}}
-                    </div>
-                    <div id="bottom">
-                        {{bottom.nine.value}}
-                    </div>
-                    <div id="left">
-                        {{left.nine.value}}
+                    <div *ngFor="let info of square.values" id='{{info.direction}}'>
+                        {{info.image}}
                     </div>
                 </mat-grid-tile>
             </mat-grid-list>
         </div>
     <span class="material-icons" id="home" routerLink="/">house</span>
-
     </div>
 
 </div>
