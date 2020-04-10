@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
-
+import { ToastrModule } from 'ngx-toastr'
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +27,10 @@ import { SelectModeComponent } from './pages/select-mode/select-mode.component';
     BrowserModule,
     AppRoutingModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    ToastrModule.forRoot(),
+    CommonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
