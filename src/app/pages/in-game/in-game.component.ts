@@ -39,8 +39,8 @@ export class InGameComponent implements OnInit {
 
   }
 
-  async clickRotation(square: number) {
-    await this.rotate(square)
+  clickRotation(square: number) {
+    this.rotate(square)
     .then( () => {
       this.compareSquare(this.resp[square], true);
     })
@@ -81,8 +81,8 @@ export class InGameComponent implements OnInit {
     
   }
 
-  async compareSquare(square: any, verifyAdjacents: boolean){
-    if (this.continueCompare) {
+  compareSquare = (square: any, verifyAdjacents: boolean) => new Promise( (resolve, reject ) => {
+    if (this.continueCompare || verifyAdjacents) {
       switch (square.position) {
         case "one":
           if(
@@ -95,9 +95,11 @@ export class InGameComponent implements OnInit {
             this.squareComplete[0] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[1], false);
-            await this.compareSquare(this.resp[3], false);
+            this.compareSquare(this.resp[1], false).then(() => [
+              this.compareSquare(this.resp[3], false)               
+            ])
           }
+          resolve()
           break;
         case "two":
           if(
@@ -111,10 +113,13 @@ export class InGameComponent implements OnInit {
             this.squareComplete[1] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[0], false);
-            await this.compareSquare(this.resp[2], false);
-            await this.compareSquare(this.resp[4], false);
+            this.compareSquare(this.resp[0], false).then(() => [
+              this.compareSquare(this.resp[2], false).then(() => [
+                this.compareSquare(this.resp[4], false)               
+                ])
+            ])
           }
+          resolve()
           break;
         case "three":
           if(
@@ -127,9 +132,11 @@ export class InGameComponent implements OnInit {
             this.squareComplete[2] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[1], false);
-            await this.compareSquare(this.resp[5], false);
+            this.compareSquare(this.resp[1], false).then(() => [
+              this.compareSquare(this.resp[5], false)               
+            ])
           }
+          resolve()
           break;
         case "four":
           if(
@@ -143,10 +150,13 @@ export class InGameComponent implements OnInit {
             this.squareComplete[3] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[0], false);
-            await this.compareSquare(this.resp[4], false);
-            await this.compareSquare(this.resp[6], false);
+            this.compareSquare(this.resp[0], false).then(() => [
+              this.compareSquare(this.resp[4], false).then(() => [
+                this.compareSquare(this.resp[6], false)               
+                ])
+            ])
           }
+          resolve()
           break;
         case "five":
           if(
@@ -161,11 +171,15 @@ export class InGameComponent implements OnInit {
             this.squareComplete[4] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[1], false);
-            await this.compareSquare(this.resp[3], false);
-            await this.compareSquare(this.resp[5], false);
-            await this.compareSquare(this.resp[7], false);
+            this.compareSquare(this.resp[1], false).then(() => [
+              this.compareSquare(this.resp[3], false).then(() => [
+                this.compareSquare(this.resp[5], false).then(() => [
+                  this.compareSquare(this.resp[7], false)               
+                  ])
+              ])
+            ])
           }
+          resolve()
           break;
         case "six":
           if(
@@ -179,10 +193,13 @@ export class InGameComponent implements OnInit {
             this.squareComplete[5] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[2], false);
-            await this.compareSquare(this.resp[8], false);
-            await this.compareSquare(this.resp[4], false);
+            this.compareSquare(this.resp[2], false).then(() => [
+              this.compareSquare(this.resp[8], false).then(() => [
+                this.compareSquare(this.resp[4], false)               
+                ])
+            ])
           }
+          resolve()
           break;
         case "seven":
           if(
@@ -195,9 +212,11 @@ export class InGameComponent implements OnInit {
             this.squareComplete[6] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[3], false);
-            await this.compareSquare(this.resp[7], false);
+            this.compareSquare(this.resp[3], false).then(() => [
+              this.compareSquare(this.resp[7], false)               
+            ])
           }
+          resolve()
           break;
         case "eight":
           if(
@@ -211,10 +230,13 @@ export class InGameComponent implements OnInit {
             this.squareComplete[7] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[6], false);
-            await this.compareSquare(this.resp[8], false);
-            await this.compareSquare(this.resp[4], false);
+            this.compareSquare(this.resp[6], false).then(() => [
+              this.compareSquare(this.resp[8], false).then(() => [
+                this.compareSquare(this.resp[4], false)               
+                ])
+            ])
           }
+          resolve()
           break;
         case "nine":
           if(
@@ -227,11 +249,14 @@ export class InGameComponent implements OnInit {
             this.squareComplete[8] = false
           }
           if (verifyAdjacents){
-            await this.compareSquare(this.resp[5], false);
-            await this.compareSquare(this.resp[7], false);
+            this.compareSquare(this.resp[5], false).then(() => [
+              this.compareSquare(this.resp[7], false)               
+            ])
           }
+          resolve()
           break;
         default:
+          resolve()
           break;
       }
   
@@ -240,7 +265,7 @@ export class InGameComponent implements OnInit {
         this.continueCompare = false
       }
     }
-  }
+  })
 
   checkGameCompleted(){
     let a = this.squareComplete.filter( square => {
