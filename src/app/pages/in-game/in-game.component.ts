@@ -1,15 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { EnumsModule } from "../../components/enums/enums.module";
 import { NumbersEXP } from "../../constants/numbers.constant"
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+
+import { timer } from 'rxjs';
 
 @Component({
   selector: "app-in-game",
   templateUrl: "./in-game.component.html",
   styleUrls: ["./in-game.component.css"]
 })
-export class InGameComponent implements OnInit {
+export class InGameComponent implements OnInit, OnDestroy {
   router: any;
   resp: any;
   expressions: any;
@@ -36,18 +38,27 @@ export class InGameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.startTimer()
   }
 
+  ngOnDestroy():void {
+    this.stopTimer()
+  }
+
+
   clickRotation(square: number) {
-    this.rotate(square)
-    .then( () => {
-      this.compareSquare(this.resp[square], true);
-    })
-    .catch( () => {
-      this.toastr.error('Erro inesperado. Voltando para a tela de seleção');
-      this.router.navigateByUrl("/select")
-    })
+    if ( !this.checkGameCompleted() ){
+      this.rotate(square)
+      .then( () => {
+        this.compareSquare(this.resp[square], true);
+      })
+      .catch( () => {
+        this.toastr.error('Erro inesperado. Voltando para a tela de seleção');
+        this.router.navigateByUrl("/select")
+      })
+    } else {
+      this.toastr.warning('Jogo já finalizado! Caso queira, inicie um novo jogo.');
+    }
   }
 
   rotate = (square) => new Promise( (resolve, reject ) => {
@@ -82,7 +93,7 @@ export class InGameComponent implements OnInit {
   }
 
   compareSquare = (square: any, verifyAdjacents: boolean) => new Promise( (resolve, reject ) => {
-    if (this.continueCompare || verifyAdjacents) {
+    if (this.continueCompare) {
       switch (square.position) {
         case "one":
           if(
@@ -261,8 +272,9 @@ export class InGameComponent implements OnInit {
       }
   
       if (this.checkGameCompleted()){
-        this.toastr.info('Você concluiu a fase. Parabéns!');
         this.continueCompare = false
+        this.stopTimer();
+        this.toastr.info(`Você concluiu a fase em ${this.hourOut}Horas, ${this.minOut}Minutos, ${this.secOut}Segundos e ${this.miliSecOut}MiliSegundos. Parabéns!`);
       }
     }
   })
@@ -289,6 +301,66 @@ export class InGameComponent implements OnInit {
     var enumMax = this.expressions[valueString].length;
     var random = Math.floor(Math.random() * enumMax);
     return this.expressions[valueString][random];
+  }
+
+
+/*
+ *
+ * Timer
+ * 
+ */
+  fullTimeMS = 0;
+
+  milisec = 0;
+  sec = 0;
+  min = 0;
+  hour = 0;
+
+  miliSecOut = 0;
+  secOut = 0;
+  minOut = 0;
+  hourOut = 0;
+
+  stopwatch;
+
+  startTimer(){
+    this.stopwatch = setInterval(() => {
+      this.fullTimeMS = this.fullTimeMS++;
+      this.miliSecOut = this.checkTime(this.milisec);
+      this.secOut = this.checkTime(this.sec);
+      this.minOut = this.checkTime(this.min);
+      this.hourOut = this.checkTime(this.hour);
+
+      this.milisec = ++this.milisec;
+
+      if (this.milisec === 100) {
+        this.milisec = 0;
+        this.sec = ++this.sec;
+      }
+
+      if (this.sec == 60) {
+        this.min = ++this.min;
+        this.sec = 0;
+      }
+    
+      if (this.min == 60) {
+        this.min = 0;
+        this.hour = ++this.hour;
+      }
+    
+    },10);
+  }
+
+  
+  checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
+  stopTimer(){
+    clearInterval(this.stopwatch)
   }
 
 }
