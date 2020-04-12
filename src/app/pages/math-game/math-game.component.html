@@ -1,0 +1,24 @@
+<div class="container">
+    <div style="display: flex; flex-direction: row;">
+        <span class="material-icons" id="help">help_outline</span>
+        <div class="table">
+            <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
+                <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
+                    <img class="imgX" src="../../../assets/x.png"/> 
+                    <div *ngFor="let info of square.values" id='{{info.direction}}'> 
+                        <!-- remover o id de cima e colocar nas divs abaixo-->
+                        <!-- <div id='{{info.direction}}' *ngIf="info.direction == 'bottom'" [ngStyle]="{bottom: fontReduce ? 'px' :'25px' }"></div>
+                        <div id='{{info.direction}}' *ngIf="info.direction == 'top'" [ngStyle]="{top: fontReduce ? 'px' :'25px' }"></div>
+                        <div id='{{info.direction}}' *ngIf="info.direction == 'left'" [ngStyle]="{left: fontReduce ? 'px' :'25px' }"></div>
+                        <div id='{{info.direction}}' *ngIf="info.direction == 'right'" [ngStyle]="{right: fontReduce ? 'px' :'25px' }"></div> -->
+                        <span ng-class="{reduce: fontReduce == true}" >{{info.image}}</span>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    <span class="material-icons" id="home" routerLink="/">house</span>
+    </div>
+    <div style="margin-top: 20px;">
+        Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
+    </div>
+</div>

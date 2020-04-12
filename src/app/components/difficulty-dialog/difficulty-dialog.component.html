@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Dificuldade</h1>
+<div mat-dialog-content>
+  <p>Escolha o nível de dificuldade do modo {{data.title}}</p>
+  <div class="cards">
+    <mat-card (click)="changeDifficulty('easy')">Fácil</mat-card>
+    <mat-card (click)="changeDifficulty('medium')">Médio</mat-card>
+    <mat-card (click)="changeDifficulty('hard')">Difícil</mat-card>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onClose('none')">Cancelar</button>
+</div>

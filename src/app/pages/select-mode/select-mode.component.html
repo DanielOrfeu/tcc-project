@@ -3,18 +3,12 @@
 
 
       <div style="margin-bottom: 20px;" class="table">
-        <mat-grid-list cols="2" rowHeight="2:2">
+        <mat-grid-list cols="1" rowHeight="2:1">
             <mat-grid-tile *ngFor="let mode of modes; let i = index">
                 <span>{{mode.title}}</span>
-                <span class="material-icons" (click)="chooseGameMode(mode.specs)" >play_circle_outline</span>
+                <span class="material-icons" (click)="chooseGameMode(mode)" >play_circle_outline</span>
             </mat-grid-tile>
           </mat-grid-list>
     </div>
     <span class="material-icons" routerLink="/main">undo</span>
-
-
-    <!-- <span>botão temporário</span>
-    <span class="material-icons" routerLink="/ingame" >play_circle_outline</span>
-
-    <span class="material-icons" routerLink="/main">undo</span> -->
 </div>

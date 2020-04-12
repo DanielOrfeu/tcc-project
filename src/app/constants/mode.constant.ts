@@ -1,22 +1,14 @@
-import { NumbersEXP, Expressions } from "./numbers.constant"
+import { NumbersEXP, ExpressionsEasy, ExpressionsMedium, Expressionshard } from "./numbers.constant"
 
 export const Modes = [
     {
         title: "Expressão aritimética",
-        specs: [NumbersEXP, Expressions]
+        specs: [NumbersEXP, ExpressionsEasy, ExpressionsMedium, Expressionshard]
     },
     {
-        title: "Expressão linguística",
+        title: "Visuoespacial e Expressão facial",
         // specs: PortugueseEXP
     },
-    {
-        title: "Formas geométricas",
-        // specs: GeometricsEXP
-    },
-    {
-        title: "Jogo Misto",
-        // specs: MixEXP
-    }
 ]
 
 

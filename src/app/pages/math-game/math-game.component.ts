@@ -1,30 +1,31 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { EnumsModule } from "../../components/enums/enums.module";
-import { NumbersEXP } from "../../constants/numbers.constant"
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-import { timer } from 'rxjs';
 
 @Component({
-  selector: "app-in-game",
-  templateUrl: "./in-game.component.html",
-  styleUrls: ["./in-game.component.css"]
+  selector: "app-math-game",
+  templateUrl: "./math-game.component.html",
+  styleUrls: ["./math-game.component.css"]
 })
-export class InGameComponent implements OnInit, OnDestroy {
+export class MathGameComponent implements OnInit, OnDestroy {
   router: any;
   resp: any;
   expressions: any;
   respValue = [];
   squareComplete = [false,false,false,false,false,false,false,false,false];
   continueCompare = true;
-  
+  fontReduce:boolean = false
+
   constructor(
     router: Router,
     private toastr: ToastrService
   ) 
   {
     try {
+      if (router.getCurrentNavigation().extras.state[2]){
+        this.fontReduce = true
+      }
       this.resp = router.getCurrentNavigation().extras.state[0];
       this.expressions = router.getCurrentNavigation().extras.state[1];
     }catch{
