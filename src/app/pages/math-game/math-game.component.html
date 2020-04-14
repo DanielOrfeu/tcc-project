@@ -1,75 +1,38 @@
 <div class="container">
     <div style="display: flex; flex-direction: row;">
-        <span class="material-icons" id="help">help_outline</span>
         <div class="table">
             <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
                 <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
                     <img class="imgX" src="../../../assets/x.png"/> 
 
                     <div *ngIf="square.values[0].direction === 'top'" [ngClass]="{'top': !isHardLevel, 'top-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[0].direction)">{{square.values[0].image}}</span>    
+                        <div *ngFor="let valueBreak of breakLine(square.values[0].image)" class="">
+                            <span>{{valueBreak}}</span>    
+                        </div>
                     </div>
                     <div *ngIf="square.values[1].direction === 'right'" [ngClass]="{'right': !isHardLevel, 'right-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[1].direction)">{{square.values[1].image}}</span>
+                        <div *ngFor="let valueBreak of breakLine(square.values[1].image)" class="">
+                            <span>{{valueBreak}}</span>
+                        </div>
                     </div>
                     <div *ngIf="square.values[2].direction === 'bottom'" [ngClass]="{'bottom': !isHardLevel, 'bottom-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[2].direction)">{{square.values[2].image}}</span>
+                        <div *ngFor="let valueBreak of breakLine(square.values[2].image)" class="">
+                            <span>{{valueBreak}}</span>
+                        </div>
                     </div>
                     <div *ngIf="square.values[3].direction === 'left'" [ngClass]="{'left': !isHardLevel, 'left-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[3].direction)">{{square.values[3].image}}</span>
+                        <div *ngFor="let valueBreak of breakLine(square.values[3].image)" class="">
+                            <span>{{valueBreak}}</span>
+                        </div>
                     </div>
 
                 </mat-grid-tile>
             </mat-grid-list>
         </div>
-    <span class="material-icons" id="home" routerLink="/">house</span>
     </div>
-    <div style="margin-top: 20px;">
-        Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
+    <div class="footer">
+        <span style="margin-right: 10px;" class="material-icons" id="help">help_outline</span>
+        <span>Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}</span>
+        <span style="margin-left: 10px;" class="material-icons" id="home" routerLink="/">house</span>
     </div>
 </div>
-
-
-
-<!-- 
-<div class="container">
-    <div style="display: flex; flex-direction: row;">
-        <span class="material-icons" id="help">help_outline</span>
-        <div class="table">
-            <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-                <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div *ngFor="let info of square.values" [class]='{"getPosition(info.direction)": !isHardLevel, "getPosition(info.direction)-reduce font-reduce": isHardLevel }'> 
-                        <span ng-class="{reduce: fontReduce == true}" >{{info.image}}</span>
-                    </div>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-    <span class="material-icons" id="home" routerLink="/">house</span>
-    </div>
-    <div style="margin-top: 20px;">
-        Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
-    </div>
-</div> -->
-
-
-
-<!-- <div class="container">
-    <div style="display: flex; flex-direction: row;">
-        <span class="material-icons" id="help">help_outline</span>
-        <div class="table">
-            <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-                <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
-                    <img class="imgX" src="../../../assets/x.png"/> 
-                    <div *ngFor="let info of square.values" class='{{info.direction}}'> 
-                        <span ng-class="{reduce: fontReduce == true}" >{{info.image}}</span>
-                    </div>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-    <span class="material-icons" id="home" routerLink="/">house</span>
-    </div>
-    <div style="margin-top: 20px;">
-        Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
-    </div>
-</div> -->

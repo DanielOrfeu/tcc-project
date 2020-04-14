@@ -13,8 +13,12 @@ export class QuizGameComponent implements OnInit {
   passedIndex = [];
 
   constructor(router: Router) {
-    this.arrayQuestions = router.getCurrentNavigation().extras.state
-    this.chooseRandomQuestion(this.arrayQuestions)
+    try {
+      this.arrayQuestions = router.getCurrentNavigation().extras.state
+      this.chooseRandomQuestion(this.arrayQuestions)
+    }catch{
+      router.navigateByUrl("/select")
+    }
   }
 
   ngOnInit(): void {
