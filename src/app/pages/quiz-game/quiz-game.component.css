@@ -34,6 +34,9 @@ mat-grid-tile{
 .container{
     height: 600px;
     width: 800px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 #help{
     left: 20px;

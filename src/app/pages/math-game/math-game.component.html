@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div class="container">
     <div style="display: flex; flex-direction: row;">
         <span class="material-icons" id="help">help_outline</span>
         <div class="table">
@@ -9,11 +9,11 @@
                     <div *ngIf="square.values[0].direction === 'top'" [ngClass]="{'top': !isHardLevel, 'top-reduce font-reduce': isHardLevel }">
                         <span (mouseover)="test(square.values[0].direction)">{{square.values[0].image}}</span>    
                     </div>
-                    <div *ngIf="square.values[1].direction == 'right'" [ngClass]="{'right': !isHardLevel, 'right-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[1].direction)">{{square.values[2].image}}</span>
+                    <div *ngIf="square.values[1].direction === 'right'" [ngClass]="{'right': !isHardLevel, 'right-reduce font-reduce': isHardLevel }">
+                        <span (mouseover)="test(square.values[1].direction)">{{square.values[1].image}}</span>
                     </div>
-                    <div *ngIf="square.values[2].direction == 'bottom'" [ngClass]="{'bottom': !isHardLevel, 'bottom-reduce font-reduce': isHardLevel }">
-                        <span (mouseover)="test(square.values[2].direction)">{{square.values[1].image}}</span>
+                    <div *ngIf="square.values[2].direction === 'bottom'" [ngClass]="{'bottom': !isHardLevel, 'bottom-reduce font-reduce': isHardLevel }">
+                        <span (mouseover)="test(square.values[2].direction)">{{square.values[2].image}}</span>
                     </div>
                     <div *ngIf="square.values[3].direction === 'left'" [ngClass]="{'left': !isHardLevel, 'left-reduce font-reduce': isHardLevel }">
                         <span (mouseover)="test(square.values[3].direction)">{{square.values[3].image}}</span>
@@ -28,7 +28,7 @@
         Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
     </div>
 </div>
- -->
+
 
 
 <!-- 
@@ -54,7 +54,7 @@
 
 
 
-<div class="container">
+<!-- <div class="container">
     <div style="display: flex; flex-direction: row;">
         <span class="material-icons" id="help">help_outline</span>
         <div class="table">
@@ -72,4 +72,4 @@
     <div style="margin-top: 20px;">
         Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
     </div>
-</div>
+</div> -->
