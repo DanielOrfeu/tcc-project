@@ -1,4 +1,5 @@
 import { NumbersEXP, ExpressionsEasy, ExpressionsMedium, Expressionshard } from "./numbers.constant"
+import { quizEXP } from "./quiz.constant"
 
 export const Modes = [
     {
@@ -7,7 +8,7 @@ export const Modes = [
     },
     {
         title: "Visuoespacial e Expressão facial",
-        // specs: PortugueseEXP
+        specs: quizEXP
     },
 ]
 
