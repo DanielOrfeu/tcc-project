@@ -15,7 +15,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
   respValue = [];
   squareComplete = [false,false,false,false,false,false,false,false,false];
   continueCompare = true;
-  fontReduce:boolean = false
+  isHardLevel:boolean = false
 
   constructor(
     router: Router,
@@ -24,7 +24,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
   {
     try {
       if (router.getCurrentNavigation().extras.state[2]){
-        this.fontReduce = true
+        this.isHardLevel = true
       }
       this.resp = router.getCurrentNavigation().extras.state[0];
       this.expressions = router.getCurrentNavigation().extras.state[1];
@@ -46,6 +46,24 @@ export class MathGameComponent implements OnInit, OnDestroy {
     this.stopTimer()
   }
 
+  getPosition(a: string){
+    switch (a) {
+      case "top":
+        return "top"
+        break;
+      case "bottom":
+        return "bottom"
+        break;
+      case "right":
+        return "right"
+        break;
+      case "left":
+        return "left"
+        break;
+      default:
+        break;
+    }
+  }
 
   clickRotation(square: number) {
     if ( !this.checkGameCompleted() ){
@@ -63,6 +81,9 @@ export class MathGameComponent implements OnInit, OnDestroy {
   }
 
   rotate = (square) => new Promise( (resolve, reject ) => {
+    console.log("Rotate Init")
+    console.log("Quadrado", square)
+    console.log("Old Resp Square", this.resp[square])
     try {
       var oldTop = this.resp[square].values[0];
       var oldRight = this.resp[square].values[1];
@@ -77,12 +98,18 @@ export class MathGameComponent implements OnInit, OnDestroy {
       this.resp[square].values[3].direction = "left";
       this.resp[square].values[0] = oldLeft;
       this.resp[square].values[0].direction = "top";
+      console.log("New Resp Square", this.resp[square])
+
       resolve()
     } catch {
       reject()
     }
   })
   
+  test(a){
+    console.log(a)
+  }
+
   createValues() {
     for(var i = 0; i < 9; i++){
       for(var j = 0; j < 4; j++){

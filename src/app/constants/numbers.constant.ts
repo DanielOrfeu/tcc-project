@@ -8,13 +8,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -33,13 +33,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -58,13 +58,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -83,13 +83,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -108,13 +108,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -133,13 +133,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -158,13 +158,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -183,13 +183,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -208,13 +208,13 @@ export const NumbersEXP = [
                image:"imageSRC"
            },
            {
-               direction: "bottom",
-                value:"valueSouth",
+               direction: "right",
+                value:"valueLest",
                 image:"imageSRC"
            },
            {
-               direction: "right",
-                value:"valueLest",
+               direction: "bottom",
+                value:"valueSouth",
                 image:"imageSRC"
            },
            {
@@ -231,15 +231,16 @@ export const NumbersEXP = [
 export const Expressionshard = {
     "0": ["0/π"],
     "1": ["99999^0","0!"],
-    "2": ["845372\n/422686","!3-2^2"],
-    "3": ["²√x-9=0","²√²√81","(6!-5!)\n/200"],
-    "4": ["2^2*\n1000^0","²√²√64"],
-    "5": ["935\n-200\n-142","²√25"],
-    "6": ["240/6\n-34","3!"],
-    "7": ["893\n-(25*6)\n\n-736","(4!)*3\n-(65)"],
-    "8": ["10^2\n-(9^2)\n-(5*3)+4"],
-    "9": ["²√81","5!-4!\n-((4!)*3)-6"]
+    "2": ["845372/422686","!3-2^2"],
+    "3": ["²√x-9=0","²√²√81","(6!-5!)/200"],
+    "4": ["2^2*1000^0","²√²√64"],
+    "5": ["935-200-142","²√25"],
+    "6": ["240/6-34","3!"],
+    "7": ["893-(25*6)-736","(4!)*3-(65)"],
+    "8": ["10^2-(9^2)-(5*3)+4"],
+    "9": ["²√81","5!-4!-((4!)*3)-6"]
 }
+
 
 export const ExpressionsMedium = {
     "0": ["5*0", "0/6", "2*0"],

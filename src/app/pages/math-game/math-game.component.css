@@ -1,10 +1,10 @@
-/* #help{
+/* .help{
     width: 100%;
     top: 20px;
     left: 20px;
     position: absolute;
 }
-#home{
+.home{
     width: 100%;
     top: 20px;
     left: 740px;
@@ -21,22 +21,46 @@
     background-color: darkgray;
 }
 
-#bottom {
+.bottom {
     bottom: 25px;
     position: absolute;
 }
-#left {
+
+.bottom-reduce {
+    bottom: 2px;
+    position: absolute;
+}
+
+.left {
     left: 25px;
     position: absolute;
 }
-#top {
+
+.left-reduce {
+    left: 2px;
+    position: absolute;
+}
+
+.top {
     top: 25px;
     position: absolute;
 }
-#right {
+
+.top-reduce {
+    top: 2px;
+    position: absolute;
+}
+
+.right {
     right: 25px;
     position: absolute;
 }
+
+.right-reduce {
+    right: 2px;
+    position: absolute;
+}
+
 
 .imgX{
     width: 176.66px;
@@ -44,6 +68,6 @@
 
 }
 
-.reduce{
-    font-size: 2px;
+.font-reduce{
+    font-size: 11px;
 }

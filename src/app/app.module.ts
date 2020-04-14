@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { ConfigComponent } from './pages/config/config.component';
-import { SquareComponent } from './components/square/square.component';
+
 import { SelectModeComponent } from './pages/select-mode/select-mode.component';
 import { MathGameComponent } from './pages/math-game/math-game.component';
 import { QuizGameComponent } from './pages/quiz-game/quiz-game.component';
@@ -24,7 +24,6 @@ import { DifficultyDialogComponent } from './components/difficulty-dialog/diffic
     AppComponent,
     MainComponent,
     ConfigComponent,
-    SquareComponent,
     SelectModeComponent,
     MathGameComponent,
     QuizGameComponent,
