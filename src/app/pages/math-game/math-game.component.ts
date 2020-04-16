@@ -65,6 +65,10 @@ export class MathGameComponent implements OnInit, OnDestroy {
     }
   }
 
+  breakLine(strNum){
+    return strNum.split(" ")
+  }
+
   clickRotation(square: number) {
     if ( !this.checkGameCompleted() ){
       this.rotate(square)

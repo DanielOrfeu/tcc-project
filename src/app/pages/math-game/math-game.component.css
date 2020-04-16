@@ -11,8 +11,8 @@
     position: absolute;
 } */
 .table{
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
 }
 .square{
     border-width: medium;
@@ -27,7 +27,7 @@
 }
 
 .bottom-reduce {
-    bottom: 2px;
+    bottom: 4px;
     position: absolute;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .left-reduce {
-    left: 2px;
+    left: 4px;
     position: absolute;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .top-reduce {
-    top: 2px;
+    top: 4px;
     position: absolute;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .right-reduce {
-    right: 2px;
+    right: 4px;
     position: absolute;
 }
 
@@ -69,5 +69,12 @@
 }
 
 .font-reduce{
-    font-size: 11px;
+    font-size: 13px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row; 
+    margin-top: 15px; 
+    align-items: center; 
 }
