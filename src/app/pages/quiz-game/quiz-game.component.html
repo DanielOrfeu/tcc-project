@@ -1,22 +1,29 @@
 <div class="container">
-    <span class="material-icons" id="help">help_outline</span>
-    <span class="material-icons" id="home" routerLink="/">house</span>
-    <img class="personagem" src="../../../assets/M1-1.png">
-    <img class="balaoFala" src="../../../assets/balaoFala.png">
-    <span class="question">{{questionComp.question}}</span>
-    <img id="questionImage" src='{{questionComp.image}}'>
-    <div class="table">
-        <mat-grid-list cols="2" rowHeight="2:1" gutterSize="10px">
-            <mat-grid-tile *ngFor="let answer of questionComp.answers">
-                <div (click)="verifyAnswer(answer)" >
-                    <button mat-raised-button *ngIf="!clicked" class="btnDefault" #btn>{{answer}}</button>
-                    <button mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswers, 'btnIncorrect': answer != questionComp.correctAnswers}" #btn>{{answer}}</button>
+    <div style="max-width: 800px; max-height: 600px;">
+        <div class="content-quiz">
+            <div class="chars">
+                <img src="../../../assets/M1-1.png">
+            </div>
+            <div class="questionElements">
+                <div class="questionBallon">
+                    <img class="balaoFala" src="../../../assets/balaoFala.png">
+                    <span class="question">{{questionComp.question}}</span>
                 </div>
-                
-            </mat-grid-tile>
-        </mat-grid-list>
+                <div class="questionImage">
+                    <img id="questionImage" src='{{questionComp.image}}'>
+                </div>
+                <div class="answersElement">
+                    <div style="margin-left: 10px; margin-right: 10px; " *ngFor="let answer of questionComp.answers">
+                        <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="!clicked" class="btnDefault" #btn>{{answer}}</button>
+                        <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswers, 'btnIncorrect': answer != questionComp.correctAnswers}" #btn>{{answer}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span style="margin-right: 10px;" class="material-icons" id="help">help_outline</span>
+                <span>Tempo:<!-- {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}} --></span>
+            <span style="margin-left: 10px;" class="material-icons" id="home" routerLink="/">house</span>
+        </div>
     </div>
-    <!-- <div style="margin-top: 20px;">
-        Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}
-    </div> -->
 </div>
