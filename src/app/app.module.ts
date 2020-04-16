@@ -18,6 +18,7 @@ import { SelectModeComponent } from './pages/select-mode/select-mode.component';
 import { MathGameComponent } from './pages/math-game/math-game.component';
 import { QuizGameComponent } from './pages/quiz-game/quiz-game.component';
 import { DifficultyDialogComponent } from './components/difficulty-dialog/difficulty-dialog.component';
+import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DifficultyDialogComponent } from './components/difficulty-dialog/diffic
     MathGameComponent,
     QuizGameComponent,
     DifficultyDialogComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
