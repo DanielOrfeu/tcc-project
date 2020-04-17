@@ -1,0 +1,20 @@
+<div class="container">
+    <div style="max-width: 800px; max-height: 600px;">
+        <div class="content-modal">
+            <div class="chars">
+                <img src="../../../assets/M1-1.png">
+            </div>
+            <div class="modalElements">
+                <div class="questionBallon">
+                    <img class="balaoFala" src="../../../assets/balaoCongrat.png">
+                    <span class="congratulations" *ngIf="data.gameMode === 'quiz'">Parabéns você concluiu o quiz em {{data.hourOut}}:{{data.minOut}}:{{data.secOut}} e acertou o total de {{data.answeredCorrect}} respostas, dê sempre o seu melhor e você irá progredir ainda mais, gostaria de saber se poderia me ajudar preenchendo um formulario com as suas opinões sobre o jogo, isso vai me ajudar a melhora-lo, esse formulario não demorar muito tempo.</span>
+                    <span class="congratulations" *ngIf="data.gameMode === 'math'">Parabéns você concluiu o jogo de matemática em {{data.hourOut}}:{{data.minOut}}:{{data.secOut}} com o total de {{data.answeredCorrect}} cliques, dê sempre o seu melhor e você irá progredir ainda mais, gostaria de saber se poderia me ajudar preenchendo um formulario com as suas opinões sobre o jogo, isso vai me ajudar a melhora-lo, esse formulario não demorar muito tempo.</span>                    
+                </div>
+                <div class="congratulationsButtons">
+                    <button mat-raised-button class="btnBack" (click)="home()">Sair</button>
+                    <button mat-raised-button class="btnDefault">Formulario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,7 @@ export const quizEXP = [
             "Cone",
             "Paralelepípedo"
         ],
-        correctAnswers: "Cubo"
+        correctAnswer: "Cubo"
     },
     {
         question: "Eu gosto muito de jogar futebol com meus amigos, mas as vezes fico em duvida de qual é a figura geométrica da bola, você lembra qual é?",
@@ -20,7 +20,7 @@ export const quizEXP = [
             "Cone",
             "Paralelepípedo"
         ],
-        correctAnswers: "Esfera"
+        correctAnswer: "Esfera"
     },
     {
         question: "Os egípcios são muito conhecidos pelas suas estruturas gigantescas, você lembra o nome dessas?",
@@ -31,7 +31,7 @@ export const quizEXP = [
             "Cone",
             "Paralelepípedo"
         ],
-        correctAnswers: "Pirâmide"
+        correctAnswer: "Pirâmide"
     },
     {
         question: "Eu gosto muito de castelos, acho eles muito lindos e fico muito encantando com em como eles são construídos, você sabe o nome da forma geométrica desses blocos?",
@@ -42,7 +42,7 @@ export const quizEXP = [
             "Cone",
             "Paralelepípedo"
         ],
-        correctAnswers: "Paralelepípedo"
+        correctAnswer: "Paralelepípedo"
     },
     {
         question: "Gosto de fazer exercícios, principalmente de futebol porque posso treinar com meus amigos, nós gostamos muito de um treino de correr passando entre uns objetos mas não lembro o nome deles, você pode me ajudar a lembrar o nome dele?",
@@ -53,7 +53,7 @@ export const quizEXP = [
             "Cone",
             "Paralelepípedo"
         ],
-        correctAnswers: "Cone"
+        correctAnswer: "Cone"
     },
 
     //figuras geométricas 2d
@@ -66,6 +66,6 @@ export const quizEXP = [
             "Retângulo",
             "Triângulo"
         ],
-        correctAnswers: "Retângulo"
+        correctAnswer: "Retângulo"
     },
 ]

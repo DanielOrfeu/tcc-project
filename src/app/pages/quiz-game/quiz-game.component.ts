@@ -1,5 +1,8 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CongratulationsModalComponent } from '../../components/congratulations-modal/congratulations-modal.component'
+
 
 @Component({
   selector: 'app-quiz-game',
@@ -9,34 +12,48 @@ import { Router } from '@angular/router';
 
 export class QuizGameComponent implements OnInit {
   @ViewChildren('btn') buttons: QueryList<HTMLElement>;
-  router: any;
   questionComp: any;
   arrayQuestions: any;
   lastIndex: number;
   clicked: boolean;
+  answeredCorrect: number;
 
-  // verde #3adc23 :: vermelho #dc2323 :: default #1d6a8e
 
-
-  constructor(router: Router) {
+  constructor(public router: Router, public dialog: MatDialog) {
     try {
-      this.arrayQuestions = router.getCurrentNavigation().extras.state
-      this.chooseRandomQuestion(this.arrayQuestions)
-    }catch{
-      router.navigateByUrl("/select")
+      this.arrayQuestions = router.getCurrentNavigation().extras.state;
+      this.chooseRandomQuestion(this.arrayQuestions);
+      this.answeredCorrect = 0;
+    } catch{
+      router.navigateByUrl("/")
     }
   }
 
   ngOnInit(): void {
+    this.startTimer()
   }
 
-  async verifyAnswer(answer: string){
+  ngOnDestroy(): void {
+    this.stopTimer()
+  }
+
+  async verifyAnswer(answer: string) {
+    if(answer === this.questionComp.correctAnswer){
+      this.answeredCorrect++;
+    }
     await this.delay();
     this.arrayQuestions.splice(this.lastIndex, 1);
     this.chooseRandomQuestion(this.arrayQuestions);
     if(this.arrayQuestions.length === 0){
+      this.stopTimer()
       console.log("Quiz Completo");
+      const dialogRef = this.dialog.open(CongratulationsModalComponent, {
+        disableClose: true,
+        data: { answeredCorrect: this.answeredCorrect, hourOut: this.hourOut, minOut: this.min, secOut: this.secOut, gameMode: "quiz" }
+      });
+
     }
+
   }
 
   private delay(): Promise<boolean> {
@@ -47,9 +64,9 @@ export class QuizGameComponent implements OnInit {
       }, 2000);
     })
   }
-  chooseRandomQuestion(questions: any){
+  chooseRandomQuestion(questions: any) {
     var questionsMax = questions.length;
-    if(questionsMax === 0){
+    if (questionsMax === 0) {
       return;
     }
     var random = Math.floor(Math.random() * questionsMax);
@@ -57,6 +74,65 @@ export class QuizGameComponent implements OnInit {
     this.questionComp = this.arrayQuestions[random];
     this.clicked = false;
     return;
+  }
+
+  /*
+ *
+ * Timer
+ * 
+ */
+  fullTimeMS = 0;
+
+  milisec = 0;
+  sec = 0;
+  min = 0;
+  hour = 0;
+
+  miliSecOut = 0;
+  secOut = 0;
+  minOut = 0;
+  hourOut = 0;
+
+  stopwatch;
+
+  startTimer() {
+    this.stopwatch = setInterval(() => {
+      this.fullTimeMS = this.fullTimeMS++;
+      this.miliSecOut = this.checkTime(this.milisec);
+      this.secOut = this.checkTime(this.sec);
+      this.minOut = this.checkTime(this.min);
+      this.hourOut = this.checkTime(this.hour);
+
+      this.milisec = ++this.milisec;
+
+      if (this.milisec === 100) {
+        this.milisec = 0;
+        this.sec = ++this.sec;
+      }
+
+      if (this.sec == 60) {
+        this.min = ++this.min;
+        this.sec = 0;
+      }
+
+      if (this.min == 60) {
+        this.min = 0;
+        this.hour = ++this.hour;
+      }
+
+    }, 10);
+  }
+
+
+  checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
+  stopTimer() {
+    clearInterval(this.stopwatch)
   }
 
 }
