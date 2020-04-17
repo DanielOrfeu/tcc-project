@@ -15,14 +15,22 @@
                 <div class="answersElement">
                     <div style="margin-left: 10px; margin-right: 10px; " *ngFor="let answer of questionComp.answers">
                         <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="!clicked" class="btnDefault" #btn>{{answer}}</button>
+<<<<<<< HEAD
                         <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswer, 'btnIncorrect': answer != questionComp.correctAnswer}" #btn>{{answer}}</button>
+=======
+                        <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswers, 'btnIncorrect': answer != questionComp.correctAnswers}" #btn>{{answer}}</button>
+>>>>>>> 9a579d65df419bfdc4944150243e8c7450549a72
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer">
             <span style="margin-right: 10px;" class="material-icons" id="help">help_outline</span>
+<<<<<<< HEAD
                 <span>Tempo:{{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}</span>
+=======
+                <span>Tempo:<!-- {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}} --></span>
+>>>>>>> 9a579d65df419bfdc4944150243e8c7450549a72
             <span style="margin-left: 10px;" class="material-icons" id="home" routerLink="/">house</span>
         </div>
     </div>
