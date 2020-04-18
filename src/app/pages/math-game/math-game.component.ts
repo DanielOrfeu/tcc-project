@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
-import { CongratulationsModalComponent } from 'src/app/components/congratulations-modal/congratulations-modal.component';
+import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
+
 
 
 @Component({
@@ -312,10 +313,13 @@ export class MathGameComponent implements OnInit, OnDestroy {
       if (this.checkGameCompleted()){
         this.continueCompare = false
         this.stopTimer();
-        this.toastr.info(`Você concluiu a fase em ${this.hourOut}Horas, ${this.minOut}Minutos, ${this.secOut}Segundos e ${this.miliSecOut}MiliSegundos. Parabéns!`);
-        const dialogRef = this.dialog.open(CongratulationsModalComponent, {
+        const dialogRef = this.dialog.open(CongratulationsDialogComponent, {
           disableClose: true,
-          data: { answeredCorrect: (this.clicks - 9), hourOut: this.hourOut, minOut: this.min, secOut: this.secOut, gameMode: "math" }
+          data: { 
+            clicksRotation: (this.clicks - 9), 
+            timePlayed: `${this.hourOut} horas, ${this.minOut} minutos, ${this.secOut} segundos e ${this.miliSecOut} milisegundos `, 
+            gameMode: "math" 
+          }
         });
       }
     }

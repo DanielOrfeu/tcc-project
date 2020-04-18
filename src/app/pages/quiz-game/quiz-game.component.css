@@ -1,11 +1,14 @@
 .btnCorrect{
-    background-color: #3adc23
+    background-color: #3adc23;
+    color: black
 }
 .btnIncorrect{
-    background-color: #dc2323
+    background-color: red;
+    color: white
 }
 .btnDefault{
-    background-color: #1d6a8e
+    background-color: blue;
+    color: white
 }
 
 .chars{
@@ -25,9 +28,10 @@
 
 .footer{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
+    margin-top: 15px; 
+    align-items: center; 
     justify-content: center;
-    margin-top: 15px;
 }
 
 .questionElements{

@@ -19,7 +19,7 @@ import { MathGameComponent } from './pages/math-game/math-game.component';
 import { QuizGameComponent } from './pages/quiz-game/quiz-game.component';
 import { DifficultyDialogComponent } from './components/difficulty-dialog/difficulty-dialog.component';
 import { FormComponent } from './pages/form/form.component';
-import { CongratulationsModalComponent } from './components/congratulations-modal/congratulations-modal.component';
+import { CongratulationsDialogComponent } from './components/congratulations-dialog/congratulations-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { CongratulationsModalComponent } from './components/congratulations-moda
     QuizGameComponent,
     DifficultyDialogComponent,
     FormComponent,
-    CongratulationsModalComponent,
+    CongratulationsDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,8 @@ import { CongratulationsModalComponent } from './components/congratulations-moda
     MatCardModule
   ],
   entryComponents: [
-    DifficultyDialogComponent
+    DifficultyDialogComponent,
+    CongratulationsDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
