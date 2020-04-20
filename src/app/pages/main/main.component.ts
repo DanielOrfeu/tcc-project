@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  viewInfo: boolean;
 
-  constructor() { }
+  constructor() { 
+    this.viewInfo = false
+  }
 
   ngOnInit(): void {
+  }
+
+  clickInfo(){
+    if(this.viewInfo){
+      this.viewInfo = false;
+    }else{
+      this.viewInfo = true;
+    }
   }
 
 }

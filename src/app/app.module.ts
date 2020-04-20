@@ -20,6 +20,7 @@ import { QuizGameComponent } from './pages/quiz-game/quiz-game.component';
 import { DifficultyDialogComponent } from './components/difficulty-dialog/difficulty-dialog.component';
 import { FormComponent } from './pages/form/form.component';
 import { CongratulationsDialogComponent } from './components/congratulations-dialog/congratulations-dialog.component';
+import { NgDimmerModule } from 'ng-dimmer';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CongratulationsDialogComponent } from './components/congratulations-dia
     CommonModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    NgDimmerModule
   ],
   entryComponents: [
     DifficultyDialogComponent,

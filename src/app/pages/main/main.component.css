@@ -4,3 +4,9 @@
     justify-content: space-evenly;
     width: 100%;
 }
+.divDimmer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}

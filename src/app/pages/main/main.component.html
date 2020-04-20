@@ -1,10 +1,18 @@
 <div class="container">
+    <ng-dimmer [txColor]="'#fff'" [bgColor]="'clack'" [bgOpacity]="0.7" *ngIf="viewInfo">
+        <div class="divDimmer">
+            <span _ngcontent-hdx-c69="" style="margin-top: 35px; margin-left: 35px;">
+                Este jogo tem o intuito de ajudar pessoas com Transtorno de aprendizagedo não-verbal, nele temos dois modos de jogo, o primeiro é um jogo com matemática a onde você irá encontrar quadrados com expressões matemáticas e deve resolve-las para ligar os lados dos quadrados que tiverem o mesmo resultado, ja outro modo de jogo é um quiz no qual você deve acertar acertar a figura geometrica ou expressão que o pessoa estiver fazendo. Jogo desenvolvido por Daniel Orfeu e Thiago Lemos e utilizado como TCC de ciência da computação. 
+            </span>
+            <span _ngcontent-hdx-c69="" id="clear" class="material-icons" (click)="clickInfo()">clear</span>
+        </div>
+    </ng-dimmer>
     <span style="font-size: 56px; margin-bottom: 60px;">Nome do Jogo</span>
     <div class="actions">
         <span class="material-icons" routerLink="/config">settings</span>
-        <span class="material-icons">power_settings_new</span>
+        <!-- <span class="material-icons">power_settings_new</span> -->
         <span class="material-icons" routerLink="/select">play_circle_outline</span>
-        <span class="material-icons">info</span>
+        <span class="material-icons" (click)="clickInfo()">info</span>
     </div>
     <div style="margin-top: 50px;">
         <img src="../../../assets/M1-1.png">
