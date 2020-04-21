@@ -2,6 +2,7 @@ import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
+import * as introJs from 'intro.js';
 
 @Component({
   selector: 'app-quiz-game',
@@ -17,6 +18,7 @@ export class QuizGameComponent implements OnInit {
   lastIndex: number;
   clicked: boolean;
   answeredCorrect: number;
+  introJs = introJs();
 
 
   constructor(public router: Router, public dialog: MatDialog) {
@@ -26,8 +28,9 @@ export class QuizGameComponent implements OnInit {
       this.totalQuestions = this.arrayQuestions.length
       this.answeredCorrect = 0;
     } catch{
-      router.navigateByUrl("/")
+      router.navigateByUrl("/select")
     }
+    this.introJs.setOptions({ doneLabel : 'Fechar', nextLabel : 'Próximo', prevLabel : 'Anterior', skipLabel : 'Sair' })
   }
 
   ngOnInit(): void {
@@ -36,6 +39,10 @@ export class QuizGameComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.stopTimer()
+  }
+
+  clickHelp(){
+    this.introJs.start();
   }
 
   async verifyAnswer(answer: string) {

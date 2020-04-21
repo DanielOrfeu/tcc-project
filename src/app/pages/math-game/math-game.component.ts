@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
-
+import * as introJs from 'intro.js';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
   continueCompare = true;
   isHardLevel:boolean = false;
   clicks: number;
+  introJs = introJs();
 
   constructor(
     router: Router,
@@ -36,6 +37,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
     }catch{
       router.navigateByUrl("/select")
     }
+    this.introJs.setOptions({ doneLabel : 'Fechar', nextLabel : 'Próximo', prevLabel : 'Anterior', skipLabel : 'Sair' })
     this.clicks = 0;
     this.createRandomValue();
     this.createValues();
@@ -91,6 +93,10 @@ export class MathGameComponent implements OnInit, OnDestroy {
     }
   }
 
+  clickHelp(){
+    this.introJs.start();
+  }
+  
   rotate = (square) => new Promise( (resolve, reject ) => {
     console.log("Rotate Init")
     console.log("Quadrado", square)

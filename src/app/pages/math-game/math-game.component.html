@@ -1,11 +1,11 @@
 <div class="container">
     <div style="display: flex; flex-direction: row;">
         <div class="table">
-            <mat-grid-list cols="3" rowHeight="3:3" gutterSize="10px">
-                <mat-grid-tile class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
+            <mat-grid-list data-step="4" data-intro="O termina quando todas as expressões ligadas com os seus vizinhos estiverem o mesmo resultado." cols="3" rowHeight="3:3" gutterSize="10px">
+                <mat-grid-tile data-step="1" data-intro="Cada quadrado possui quarto expressões sendo cada uma em uma posição (cima, baixo, direita e esquerda)." data-position="left" class="square" *ngFor="let square of resp; let i = index" (click)="clickRotation(i)">
                     <img class="imgX" src="../../../assets/x.png"/> 
 
-                    <div *ngIf="square.values[0].direction === 'top'" [ngClass]="{'top': !isHardLevel, 'top-reduce font-reduce': isHardLevel }">
+                    <div data-step="2" data-intro="As expressões geram um resultado e o objetivo é ligar as expressões de quadrados vizinhos com o mesmo resultado. Aqui por exemplo seria este valor (posição cima) ligado com o valor (posição baixo) do quadrado acima" data-position="left" *ngIf="square.values[0].direction === 'top'" [ngClass]="{'top': !isHardLevel, 'top-reduce font-reduce': isHardLevel }">
                         <div *ngFor="let valueBreak of breakLine(square.values[0].image)" class="">
                             <span>{{valueBreak}}</span>    
                         </div>
@@ -20,7 +20,7 @@
                             <span>{{valueBreak}}</span>
                         </div>
                     </div>
-                    <div *ngIf="square.values[3].direction === 'left'" [ngClass]="{'left': !isHardLevel, 'left-reduce font-reduce': isHardLevel }">
+                    <div data-step="3" data-intro="Aqui por exemplo seria este valor (posição esquerda) ligado com o valor (posição direita) do quadrado à esquerda" data-position="top" *ngIf="square.values[3].direction === 'left'" [ngClass]="{'left': !isHardLevel, 'left-reduce font-reduce': isHardLevel }">
                         <div *ngFor="let valueBreak of breakLine(square.values[3].image)" class="">
                             <span>{{valueBreak}}</span>
                         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="footer">
-        <span style="margin-right: 10px;" class="material-icons" id="help">help_outline</span>
+        <span style="margin-right: 10px;" class="material-icons" id="help" (click)="clickHelp()">help_outline</span>
         <span>Tempo: {{hourOut}}:{{minOut}}:{{secOut}}:{{miliSecOut}}</span>
         <span style="margin-left: 10px;" class="material-icons" id="home" routerLink="/">house</span>
     </div>
