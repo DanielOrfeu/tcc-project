@@ -6,7 +6,19 @@
 }
 .divDimmer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.fullView{
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
 }
