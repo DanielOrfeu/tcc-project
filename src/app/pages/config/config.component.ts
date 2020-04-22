@@ -24,8 +24,4 @@ export class ConfigComponent implements OnInit {
   changeFontColor(color:string){
     document.body.style.color = color;
   }
-
-  changeFontSize(size:string){
-    document.body.style.fontSize = size;
-  }
 }

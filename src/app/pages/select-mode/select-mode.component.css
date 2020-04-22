@@ -16,6 +16,11 @@ mat-grid-tile {
 }
 
 .mode:hover{
-    background-color: lightseagreen;
+    background-color: #3f51b5;
     cursor: pointer;
+}
+
+.icon{
+    height: 100px;
+    margin-top: 10px;
 }

@@ -7,17 +7,11 @@
         <button *ngFor="let bg of background" mat-raised-button color="primary" (click)="changeBackgroundColor(bg.color)">{{bg.name}}</button>
     </div>
 
-    <div class="item">
+    <!-- <div class="item">
         <span>Cor da fonte:</span>
         <div class="space"></div>
         <button *ngFor="let cl of color" mat-raised-button color="primary" (click)="changeFontColor(cl.color)">{{cl.name}}</button>
-    </div>
-
-    <div class="item">
-        <span>Tamanho de texto de fala:</span>
-        <div class="space"></div>
-        <button *ngFor="let sz of size" mat-raised-button color="primary" (click)="changeFontSize(sz.size)" >{{sz.name}}</button>
-    </div>
+    </div> -->
 
     <span class="material-icons" routerLink="/">undo</span>
 
