@@ -21,6 +21,8 @@ export class MathGameComponent implements OnInit, OnDestroy {
   isHardLevel:boolean = false;
   clicks: number;
   introJs = introJs();
+  audio: any;
+  clickAudio: any;
 
   constructor(
     router: Router,
@@ -47,11 +49,17 @@ export class MathGameComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.startTimer()
+    this.startTimer();
+    this.audio = document.getElementById('backgroundSound');
+    this.clickAudio = document.getElementById('clickSound');
+
+    if (this.audio.duration > 0 && !this.audio.paused)
+      this.audio.pause();
   }
 
   ngOnDestroy():void {
-    this.stopTimer()
+    this.stopTimer();
+    this.audio.play();
   }
 
   getPosition(a: string){
@@ -91,6 +99,8 @@ export class MathGameComponent implements OnInit, OnDestroy {
     } else {
       this.toastr.warning('Jogo já finalizado! Caso queira, inicie um novo jogo.');
     }
+    if(this.clicks > 9)
+      this.clickAudio.play();
   }
 
   clickHelp(){

@@ -8,6 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./congratulations-dialog.component.css']
 })
 export class CongratulationsDialogComponent implements OnInit {
+  audio: any;
+  congratulationsAudio: any;
 
   constructor(
     public router: Router,
@@ -18,6 +20,15 @@ export class CongratulationsDialogComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.audio = document.getElementById('backgroundSound');
+    this.congratulationsAudio = document.getElementById('congratularionsSound');
+    this.congratulationsAudio.play();
+    if (this.audio.duration > 0 && !this.audio.paused)
+      this.audio.pause();
+  }
+
+  ngOnDestroy(): void {
+    this.audio.play();
   }
 
   goToHome() {

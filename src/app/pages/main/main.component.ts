@@ -9,7 +9,7 @@ export class MainComponent implements OnInit {
   viewInfo: boolean;
 
   constructor() { 
-    this.viewInfo = false
+    this.viewInfo = false;
   }
 
   ngOnInit(): void {

@@ -19,6 +19,8 @@ export class QuizGameComponent implements OnInit {
   clicked: boolean;
   answeredCorrect: number;
   introJs = introJs();
+  audio: any;
+  questionAudio: any
 
 
   constructor(public router: Router, public dialog: MatDialog) {
@@ -34,11 +36,17 @@ export class QuizGameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.startTimer()
+    this.startTimer();
+    this.audio = document.getElementById('backgroundSound');
+    this.questionAudio = document.getElementById('questionSound');
+    this.questionAudio.play();
+    if (this.audio.duration > 0 && !this.audio.paused)
+      this.audio.pause();
   }
 
   ngOnDestroy(): void {
-    this.stopTimer()
+    this.stopTimer();
+    this.audio.play();
   }
 
   clickHelp(){
@@ -54,6 +62,7 @@ export class QuizGameComponent implements OnInit {
     this.paused = false;
     this.arrayQuestions.splice(this.lastIndex, 1);
     this.chooseRandomQuestion(this.arrayQuestions);
+    this.questionAudio.play();
     if(this.arrayQuestions.length === 0){
       this.stopTimer()
       console.log("Quiz Completo");
