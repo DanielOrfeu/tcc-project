@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
 import * as introJs from 'intro.js';
+import { resolve } from 'path';
 
 @Component({
   selector: 'app-quiz-game',
@@ -21,6 +22,7 @@ export class QuizGameComponent implements OnInit {
   introJs = introJs();
   audio: any;
   questionAudio: any
+  dirname: string;
 
 
   constructor(public router: Router, public dialog: MatDialog) {
@@ -33,6 +35,7 @@ export class QuizGameComponent implements OnInit {
       router.navigateByUrl("/select")
     }
     this.introJs.setOptions({ doneLabel : 'Fechar', nextLabel : 'Próximo', prevLabel : 'Anterior', skipLabel : 'Sair' })
+    this.dirname = resolve() + '/src';
   }
 
   ngOnInit(): void {
@@ -65,7 +68,6 @@ export class QuizGameComponent implements OnInit {
     this.questionAudio.play();
     if(this.arrayQuestions.length === 0){
       this.stopTimer()
-      console.log("Quiz Completo");
       const dialogRef = this.dialog.open(CongratulationsDialogComponent, {
         disableClose: true,
         data: { 

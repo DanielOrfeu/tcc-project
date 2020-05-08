@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resolve } from 'path'; 
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   viewInfo: boolean;
+  dirname: string;
 
   constructor() { 
     this.viewInfo = false;
+    this.dirname = resolve() + '/src';
   }
 
   ngOnInit(): void {

@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
 import * as introJs from 'intro.js';
+import { resolve } from 'path'; 
 
 
 @Component({
@@ -23,6 +24,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
   introJs = introJs();
   audio: any;
   clickAudio: any;
+  dirname: string;
 
   constructor(
     router: Router,
@@ -46,6 +48,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
     this.resp.forEach((element, i) => {
       this.clickRotation(i)
     });
+    this.dirname = resolve() + '/src';
   }
 
   ngOnInit(): void {
@@ -108,9 +111,6 @@ export class MathGameComponent implements OnInit, OnDestroy {
   }
   
   rotate = (square) => new Promise( (resolve, reject ) => {
-    console.log("Rotate Init")
-    console.log("Quadrado", square)
-    console.log("Old Resp Square", this.resp[square])
     try {
       var oldTop = this.resp[square].values[0];
       var oldRight = this.resp[square].values[1];
@@ -125,17 +125,12 @@ export class MathGameComponent implements OnInit, OnDestroy {
       this.resp[square].values[3].direction = "left";
       this.resp[square].values[0] = oldLeft;
       this.resp[square].values[0].direction = "top";
-      console.log("New Resp Square", this.resp[square])
 
       resolve()
     } catch {
       reject()
     }
   })
-  
-  test(a){
-    console.log(a)
-  }
 
   createValues() {
     for(var i = 0; i < 9; i++){

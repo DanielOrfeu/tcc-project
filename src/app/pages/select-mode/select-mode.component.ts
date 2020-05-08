@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Modes } from '../../constants/mode.constant'
 import { MatDialog } from '@angular/material/dialog';
 import { DifficultyDialogComponent } from 'src/app/components/difficulty-dialog/difficulty-dialog.component';
+import { resolve } from 'path'; 
 
 @Component({
   selector: 'app-select-mode',
@@ -12,12 +13,14 @@ import { DifficultyDialogComponent } from 'src/app/components/difficulty-dialog/
 export class SelectModeComponent implements OnInit {
  router: any;
  modes = Modes;
+ dirname: string;
 
   constructor(
     router: Router,
     public dialog: MatDialog
     ) { 
-    this.router = router;    
+    this.router = router;
+    this.dirname = resolve() + '/src';
   }
 
   ngOnInit(): void {
@@ -55,8 +58,6 @@ export class SelectModeComponent implements OnInit {
           state: [mode.specs[0],mode.specs[3], true]
         })
        }
-console.log("result",result)
-console.log("mode",mode)
 
     });
   }
