@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve } from 'path'; 
+import { pathImagem } from '../../../main';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +8,11 @@ import { resolve } from 'path';
 })
 export class MainComponent implements OnInit {
   viewInfo: boolean;
-  dirname: string;
+  dirname: any;
 
   constructor() { 
     this.viewInfo = false;
-    this.dirname = resolve() + '/src';
+    this.dirname = pathImagem();
   }
 
   ngOnInit(): void {

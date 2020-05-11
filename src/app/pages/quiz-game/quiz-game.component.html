@@ -10,7 +10,7 @@
                     <span class="question">{{questionComp.question}}</span>
                 </div>
                 <div class="questionImage" data-step="2" data-intro="Logo abaixo temos uma imagem referente a pergunta feita pelo personagem" data-position="top">
-                    <img id="questionImage" src='{{questionComp.image}}'>
+                    <img id="questionImage" src='{{dirname}}{{questionComp.image}}'>
                 </div>
                 <div class="answersElement" data-step="3" data-intro="Aqui nós temos os botões com as respostas onde uma delas está correta, logo após você responder o personagem mostrar qual é a resposta correta" data-position="top">
                     <div style="margin-left: 10px; margin-right: 10px; " *ngFor="let answer of questionComp.answers">

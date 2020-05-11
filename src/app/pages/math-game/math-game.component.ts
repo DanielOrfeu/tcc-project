@@ -4,7 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
 import * as introJs from 'intro.js';
-import { resolve } from 'path'; 
+import { pathImagem } from '../../../main'; 
 
 
 @Component({
@@ -24,7 +24,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
   introJs = introJs();
   audio: any;
   clickAudio: any;
-  dirname: string;
+  dirname: any;
 
   constructor(
     router: Router,
@@ -48,7 +48,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
     this.resp.forEach((element, i) => {
       this.clickRotation(i)
     });
-    this.dirname = resolve() + '/src';
+    this.dirname = pathImagem();
   }
 
   ngOnInit(): void {

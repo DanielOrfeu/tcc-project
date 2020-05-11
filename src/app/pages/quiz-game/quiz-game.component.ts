@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
 import * as introJs from 'intro.js';
-import { resolve } from 'path';
+import { pathImagem } from '../../../main';
 
 @Component({
   selector: 'app-quiz-game',
@@ -22,10 +22,12 @@ export class QuizGameComponent implements OnInit {
   introJs = introJs();
   audio: any;
   questionAudio: any
-  dirname: string;
+  dirname: any;
 
 
   constructor(public router: Router, public dialog: MatDialog) {
+    this.dirname = pathImagem();
+    console.log('dirname ::', this.dirname)
     try {
       this.arrayQuestions = router.getCurrentNavigation().extras.state;
       this.chooseRandomQuestion(this.arrayQuestions);
@@ -35,7 +37,6 @@ export class QuizGameComponent implements OnInit {
       router.navigateByUrl("/select")
     }
     this.introJs.setOptions({ doneLabel : 'Fechar', nextLabel : 'Próximo', prevLabel : 'Anterior', skipLabel : 'Sair' })
-    this.dirname = resolve() + '/src';
   }
 
   ngOnInit(): void {
@@ -97,6 +98,7 @@ export class QuizGameComponent implements OnInit {
     this.lastIndex = random;
     this.questionComp = this.arrayQuestions[random];
     this.clicked = false;
+    console.log('chooseRandomQuestion :: dirname :: ', this.dirname)
     return;
   }
 
