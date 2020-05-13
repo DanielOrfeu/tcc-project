@@ -27,9 +27,10 @@ export class QuizGameComponent implements OnInit {
 
   constructor(public router: Router, public dialog: MatDialog) {
     this.dirname = pathImagem();
-    console.log('dirname ::', this.dirname)
     try {
-      this.arrayQuestions = router.getCurrentNavigation().extras.state;
+      let infoRoute 
+      infoRoute = router.getCurrentNavigation().extras.state
+      this.arrayQuestions = [...infoRoute]
       this.chooseRandomQuestion(this.arrayQuestions);
       this.totalQuestions = this.arrayQuestions.length
       this.answeredCorrect = 0;
@@ -50,7 +51,7 @@ export class QuizGameComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.stopTimer();
-    this.audio.play();
+    this.audio.play(); 
   }
 
   clickHelp(){
@@ -59,14 +60,15 @@ export class QuizGameComponent implements OnInit {
 
   async verifyAnswer(answer: string) {
     this.paused = true;
-    if(answer === this.questionComp.correctAnswer){
+    if(answer === this.questionComp.correctAnswer)
       this.answeredCorrect++;
-    }
+    
     await this.delay();
+    
     this.paused = false;
     this.arrayQuestions.splice(this.lastIndex, 1);
     this.chooseRandomQuestion(this.arrayQuestions);
-    this.questionAudio.play();
+
     if(this.arrayQuestions.length === 0){
       this.stopTimer()
       const dialogRef = this.dialog.open(CongratulationsDialogComponent, {
@@ -76,9 +78,9 @@ export class QuizGameComponent implements OnInit {
           timePlayed: `${this.hourOut} horas, ${this.minOut} minutos, ${this.secOut} segundos e ${this.miliSecOut} milisegundos `, 
           gameMode: "quiz" }
       });
-
+    } else {
+      this.questionAudio.play();
     }
-
   }
 
   private delay(): Promise<boolean> {
@@ -89,6 +91,7 @@ export class QuizGameComponent implements OnInit {
       }, 2000);
     })
   }
+
   chooseRandomQuestion(questions: any) {
     var questionsMax = questions.length;
     if (questionsMax === 0) {
@@ -98,7 +101,6 @@ export class QuizGameComponent implements OnInit {
     this.lastIndex = random;
     this.questionComp = this.arrayQuestions[random];
     this.clicked = false;
-    console.log('chooseRandomQuestion :: dirname :: ', this.dirname)
     return;
   }
 
