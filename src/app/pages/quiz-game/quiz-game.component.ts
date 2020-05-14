@@ -23,12 +23,13 @@ export class QuizGameComponent implements OnInit {
   audio: any;
   questionAudio: any
   dirname: any;
+  disabledBtn: boolean = false;
 
 
   constructor(public router: Router, public dialog: MatDialog) {
     this.dirname = pathImagem();
     try {
-      let infoRoute 
+      let infoRoute
       infoRoute = router.getCurrentNavigation().extras.state
       this.arrayQuestions = [...infoRoute]
       this.chooseRandomQuestion(this.arrayQuestions);
@@ -37,7 +38,7 @@ export class QuizGameComponent implements OnInit {
     } catch{
       router.navigateByUrl("/select")
     }
-    this.introJs.setOptions({ doneLabel : 'Fechar', nextLabel : 'Próximo', prevLabel : 'Anterior', skipLabel : 'Sair' })
+    this.introJs.setOptions({ doneLabel: 'Fechar', nextLabel: 'Próximo', prevLabel: 'Anterior', skipLabel: 'Sair' })
   }
 
   ngOnInit(): void {
@@ -51,45 +52,44 @@ export class QuizGameComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.stopTimer();
-    this.audio.play(); 
+    this.audio.play();
   }
 
-  clickHelp(){
+  clickHelp() {
     this.introJs.start();
   }
 
   async verifyAnswer(answer: string) {
-    this.paused = true;
-    if(answer === this.questionComp.correctAnswer)
-      this.answeredCorrect++;
-    
-    await this.delay();
-    
-    this.paused = false;
-    this.arrayQuestions.splice(this.lastIndex, 1);
-    this.chooseRandomQuestion(this.arrayQuestions);
+    this.disabledBtn = true
 
-    if(this.arrayQuestions.length === 0){
+    this.paused = true;
+    if (answer === this.questionComp.correctAnswer)
+      this.answeredCorrect++;
+
+
+    await setTimeout(() => {
+      this.clicked = true;
+      this.paused = false;
+      this.arrayQuestions.splice(this.lastIndex, 1);
+      this.chooseRandomQuestion(this.arrayQuestions);
+      this.disabledBtn = false
+    }, 2000);
+
+    if (this.arrayQuestions.length === 0) {
       this.stopTimer()
       const dialogRef = this.dialog.open(CongratulationsDialogComponent, {
         disableClose: true,
-        data: { 
-          questions: `${this.answeredCorrect} de ${this.totalQuestions}`, 
-          timePlayed: `${this.hourOut} horas, ${this.minOut} minutos, ${this.secOut} segundos e ${this.miliSecOut} milisegundos `, 
-          gameMode: "quiz" }
+        data: {
+          questions: `${this.answeredCorrect} de ${this.totalQuestions}`,
+          timePlayed: `${this.hourOut} horas, ${this.minOut} minutos, ${this.secOut} segundos e ${this.miliSecOut} milisegundos `,
+          gameMode: "quiz"
+        }
       });
     } else {
       this.questionAudio.play();
     }
-  }
 
-  private delay(): Promise<boolean> {
-    return new Promise(resolve => {
-      this.clicked = true;
-      setTimeout(() => {
-        resolve(true);
-      }, 2000);
-    })
+
   }
 
   chooseRandomQuestion(questions: any) {
@@ -120,32 +120,32 @@ export class QuizGameComponent implements OnInit {
   secOut = 0;
   minOut = 0;
   hourOut = 0;
-  
+
   paused: boolean = false;
 
   stopwatch;
 
   startTimer() {
     this.stopwatch = setInterval(() => {
-      if (!this.paused){
+      if (!this.paused) {
         this.fullTimeMS = this.fullTimeMS++;
         this.miliSecOut = this.checkTime(this.milisec);
         this.secOut = this.checkTime(this.sec);
         this.minOut = this.checkTime(this.min);
         this.hourOut = this.checkTime(this.hour);
-  
+
         this.milisec = ++this.milisec;
-  
+
         if (this.milisec === 100) {
           this.milisec = 0;
           this.sec = ++this.sec;
         }
-  
+
         if (this.sec == 60) {
           this.min = ++this.min;
           this.sec = 0;
         }
-  
+
         if (this.min == 60) {
           this.min = 0;
           this.hour = ++this.hour;

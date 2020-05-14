@@ -14,8 +14,8 @@
                 </div>
                 <div class="answersElement" data-step="3" data-intro="Aqui nós temos os botões com as respostas onde uma delas está correta, logo após você responder o personagem mostrar qual é a resposta correta" data-position="top">
                     <div style="margin-left: 10px; margin-right: 10px; " *ngFor="let answer of questionComp.answers">
-                        <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="!clicked" class="btnDefault" #btn>{{answer}}</button>
-                        <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswer, 'btnIncorrect': answer != questionComp.correctAnswer}" #btn>{{answer}}</button>
+                        <button [disabled]="disabledBtn" (click)="verifyAnswer(answer)" mat-raised-button *ngIf="!clicked" class="btnDefault" #btn>{{answer}}</button>
+                        <button [disabled]="disabledBtn" (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswer, 'btnIncorrect': answer != questionComp.correctAnswer}" #btn>{{answer}}</button>
                     </div>
                 </div>
             </div>

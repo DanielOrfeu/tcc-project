@@ -11,6 +11,19 @@
     color: white
 }
 
+.btnCorrect:disabled{
+    background-color: cyan;
+    color: black
+}
+.btnIncorrect:disabled{
+    background-color: grey;
+    color: white
+}
+.btnDefault:disabled{
+    background-color: black;
+    color: white
+}
+
 .chars{
     display: flex;
     flex-direction: column-reverse;
