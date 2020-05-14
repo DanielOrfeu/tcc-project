@@ -23,8 +23,6 @@ export class QuizGameComponent implements OnInit {
   audio: any;
   questionAudio: any
   dirname: any;
-  disabledBtn: boolean = false;
-
 
   constructor(public router: Router, public dialog: MatDialog) {
     this.dirname = pathImagem();
@@ -60,19 +58,16 @@ export class QuizGameComponent implements OnInit {
   }
 
   async verifyAnswer(answer: string) {
-    this.disabledBtn = true
 
     this.paused = true;
     if (answer === this.questionComp.correctAnswer)
       this.answeredCorrect++;
-
+      this.clicked = true;
 
     await setTimeout(() => {
-      this.clicked = true;
       this.paused = false;
       this.arrayQuestions.splice(this.lastIndex, 1);
       this.chooseRandomQuestion(this.arrayQuestions);
-      this.disabledBtn = false
     }, 2000);
 
     if (this.arrayQuestions.length === 0) {

@@ -1,3 +1,8 @@
 <div class="container">
-    <iframe class="form-google" src="https://docs.google.com/forms/d/e/1FAIpQLScc2jWVGBSHnihIOjrnu7Eo8RzRql2zy5ujoxP1UFDZro0x6w/viewform?embedded=true">Carregando…</iframe>
+    <div *ngIf="isConnected">
+        <iframe class="form-google" src="https://docs.google.com/forms/d/e/1FAIpQLScc2jWVGBSHnihIOjrnu7Eo8RzRql2zy5ujoxP1UFDZro0x6w/viewform?embedded=true">Carregando…</iframe>
+    </div>
+    <div *ngIf="!isConnected">
+        <a> teste </a>
+    </div>
 </div>

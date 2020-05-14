@@ -1,26 +1,13 @@
-.btnCorrect{
+.btnCorrect:disabled{
     background-color: #3adc23;
     color: black
 }
-.btnIncorrect{
+.btnIncorrect:disabled{
     background-color: red;
     color: white
 }
 .btnDefault{
     background-color: blue;
-    color: white
-}
-
-.btnCorrect:disabled{
-    background-color: cyan;
-    color: black
-}
-.btnIncorrect:disabled{
-    background-color: grey;
-    color: white
-}
-.btnDefault:disabled{
-    background-color: black;
     color: white
 }
 
