@@ -1,10 +1,28 @@
-mat-grid-tile {
+/* mat-grid-tile {
     background: white;
+} */
+
+@font-face {
+    font-family: chalkboard;
+    src: url('../../../assets/fonts/ChalkboardByMartaVanEck-gvpp.ttf') format('truetype');
+}
+
+.container{
+    position: relative;
+    bottom: 90px;
+}
+
+.boardImg{
+    position: relative;
+    z-index: -1;
+    top: 175px;
 }
 
 .table{
     width: 350px;
     height: 350px;
+    position: relative;
+    bottom: 30px;
 }
 
 .mode{
@@ -23,4 +41,11 @@ mat-grid-tile {
 .icon{
     height: 100px;
     margin-top: 10px;
+}
+
+.material-icons{
+    color: white;
+    position: relative;
+    bottom: 10px;
+    left: 150px;
 }
