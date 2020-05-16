@@ -21,6 +21,7 @@ import { DifficultyDialogComponent } from './components/difficulty-dialog/diffic
 import { FormComponent } from './pages/form/form.component';
 import { CongratulationsDialogComponent } from './components/congratulations-dialog/congratulations-dialog.component';
 import { NgDimmerModule } from 'ng-dimmer';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NgDimmerModule } from 'ng-dimmer';
     BrowserAnimationsModule,
     MatDialogModule,
     MatCardModule,
-    NgDimmerModule
+    NgDimmerModule,
+    NgxSpinnerModule
   ],
   entryComponents: [
     DifficultyDialogComponent,
