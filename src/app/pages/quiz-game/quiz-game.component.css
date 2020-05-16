@@ -1,8 +1,8 @@
-.btnCorrect{
+.btnCorrect:disabled{
     background-color: #3adc23;
     color: black
 }
-.btnIncorrect{
+.btnIncorrect:disabled{
     background-color: red;
     color: white
 }
