@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConnectionService } from 'ng-connection-service';
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 
@@ -15,27 +15,33 @@ export class FormComponent implements OnInit {
   constructor(
     private connectionService: ConnectionService,
     private spinner: NgxSpinnerService
-    ) {
+  ) {
     this.connectionService.monitor().subscribe(isConnected => {
-      if(isConnected){
-        this.showForm = false;
-        this.showRetryMessage = false;
-        this.showLoading = true;
-        this.spinner.show();
-        setTimeout(() => {
-          this.showLoading = false;
-          this.showForm = true
-          this.spinner.hide();
-        }, 5500);
+      if (isConnected) {
+        this.loadingMode(5500)
       } else {
-        this.showForm = false;
-        this.showRetryMessage = true;
-        this.showLoading = false;
+        this.loadingMode(1000)
       }
     })
   }
 
-  ngOnInit(): void {
+  loadingMode(ms: number) {
+    this.showForm = false;
+    this.showRetryMessage = false;
+    this.showLoading = true;
+    this.spinner.show();
+    setTimeout(() => {
+      if (window.navigator.onLine) {
+        this.showForm = true
+      } else {
+        this.showRetryMessage = true;
+      }
+      this.showLoading = false;
+      this.spinner.hide();
+    }, ms);
   }
 
+  ngOnInit(): void {
+    this.loadingMode(1500)
+  }
 }
