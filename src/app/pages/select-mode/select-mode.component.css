@@ -18,6 +18,13 @@
     top: 175px;
 }
 
+.tableDificulty{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    top: 20px;
+}
+
 .table{
     width: 350px;
     height: 350px;
@@ -34,7 +41,7 @@
 }
 
 .mode:hover{
-    background-color: #3f51b5;
+    background-color: #617947;
     cursor: pointer;
 }
 
@@ -46,6 +53,19 @@
 .material-icons{
     color: white;
     position: relative;
-    bottom: 10px;
+    bottom: 5px;
     left: 150px;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 84px;
+}
+
+.mat-stroked-button{
+    color: white;
+    border-color: white;
 }

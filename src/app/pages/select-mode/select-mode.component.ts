@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Modes } from '../../constants/mode.constant'
 import { MatDialog } from '@angular/material/dialog';
-import { DifficultyDialogComponent } from 'src/app/components/difficulty-dialog/difficulty-dialog.component';
 import { pathImage } from 'src/main';
 
 @Component({
@@ -14,6 +13,7 @@ export class SelectModeComponent implements OnInit {
   router: any;
   modes = Modes;
   dirname: any;
+  selectMode: boolean
 
   constructor(
     router: Router,
@@ -25,6 +25,7 @@ export class SelectModeComponent implements OnInit {
       this.dirname = pathImage();
     }
     this.router = router;
+    this.selectMode = true;
   }
 
   ngOnInit(): void {
@@ -36,33 +37,26 @@ export class SelectModeComponent implements OnInit {
         state: mode.specs
       })
     } else {
-      this.openDialog(mode.title, mode)
+      this.selectMode = false;
     }
 
 
   }
 
-  openDialog(title, mode): void {
-    const dialogRef = this.dialog.open(DifficultyDialogComponent, {
-      width: '400px',
-      data: { title }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'easy') {
-        this.router.navigateByUrl('/math', {
-          state: [mode.specs[0], mode.specs[1]]
-        })
-      } else if (result === 'medium') {
-        this.router.navigateByUrl('/math', {
-          state: [mode.specs[0], mode.specs[2]]
-        })
-      } else if (result === 'hard') {
-        this.router.navigateByUrl('/math', {
-          state: [mode.specs[0], mode.specs[3], true]
-        })
-      }
-    });
+  changeDifficulty(difficulty: string){
+    if(difficulty === 'easy'){
+      this.router.navigateByUrl('/math', {
+        state: [this.modes[0].specs[0], this.modes[0].specs[1]]
+      })
+    }else if (difficulty === 'medium'){
+      this.router.navigateByUrl('/math', {
+        state: [this.modes[0].specs[0], this.modes[0].specs[2]]
+      })
+    } else {
+      this.router.navigateByUrl('/math', {
+        state: [this.modes[0].specs[0], this.modes[0].specs[3], true]
+      })
+    }
   }
 
 }
