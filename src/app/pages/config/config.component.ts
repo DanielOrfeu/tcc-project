@@ -8,13 +8,16 @@ import { backgroundColor, fontColor, fontSize } from '../../constants/config.con
   styleUrls: ['./config.component.css']
 })
 export class ConfigComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer) {}
 
   background = backgroundColor
   color = fontColor
   size = fontSize
+  music: any;
+  playing: boolean;
   
   ngOnInit(): void {
+    this.music = document.getElementById('backgroundSound');
   }
 
   changeBackgroundColor(color:string){
@@ -23,5 +26,13 @@ export class ConfigComponent implements OnInit {
 
   changeFontColor(color:string){
     document.body.style.color = color;
+  }
+
+  stateMusic(state:string){
+    if(state === 'on'){
+      this.music.play();
+    } else {
+      this.music.pause();
+    }
   }
 }
