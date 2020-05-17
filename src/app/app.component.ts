@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { pathImage } from 'src/main';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
+  dirname: any;
 
   ngOnInit(): void {
     this.audio = document.getElementById('backgroundSound');
@@ -14,7 +16,11 @@ export class AppComponent implements OnInit {
   }
 
   constructor(){
-    
+    if (!pathImage()) {
+      this.dirname = "../../.."
+    } else {
+      this.dirname = pathImage();
+    }
   }
 
   title = 'tcc-project';

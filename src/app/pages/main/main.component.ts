@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { pathImage } from 'src/main'
 
 @Component({
   selector: 'app-main',
@@ -7,18 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   viewInfo: boolean;
+  dirname: any;
 
-  constructor() { 
+  constructor() {
     this.viewInfo = false;
+    if (!pathImage()) {
+      this.dirname = "../../.."
+    } else {
+      this.dirname = pathImage();
+    }
   }
 
   ngOnInit(): void {
   }
 
-  clickInfo(){
-    if(this.viewInfo){
+  clickInfo() {
+    if (this.viewInfo) {
       this.viewInfo = false;
-    }else{
+    } else {
       this.viewInfo = true;
     }
   }

@@ -1,4 +1,4 @@
-<img class="boardImg" src="../../../assets/quadroNegro.png">
+<img class="boardImg" src="{{dirname}}/assets/quadroNegro.png">
 <div class="container">
     <span style="font-family: chalkboard; color: white; font-size: 42px; margin-bottom: 60px;">Selecione o modo:</span>
 
@@ -8,8 +8,8 @@
             <mat-grid-tile *ngFor="let mode of modes; let i = index">
               <div  style="display: flex; flex-direction: column;" class="mode" (click)="chooseGameMode(mode)">
                 <!-- <span>{{mode.title}}</span> -->
-                <img *ngIf="mode.title === 'Expressão aritimética'" class="icon" src="../../../assets/iconMath.png">
-                <img *ngIf="mode.title !== 'Expressão aritimética'" class="icon" src="../../../assets/iconQuiz.png">
+                <img *ngIf="mode.title === 'Expressão aritimética'" class="icon" src="{{dirname}}/assets/iconMath.png">
+                <img *ngIf="mode.title !== 'Expressão aritimética'" class="icon" src="{{dirname}}/assets/iconQuiz.png">
               </div>
 
             </mat-grid-tile>

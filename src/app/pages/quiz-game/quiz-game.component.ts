@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratulationsDialogComponent } from 'src/app/components/congratulations-dialog/congratulations-dialog.component';
 import * as introJs from 'intro.js';
+import { pathImage } from 'src/main';
 
 @Component({
   selector: 'app-quiz-game',
@@ -21,11 +22,17 @@ export class QuizGameComponent implements OnInit {
   introJs = introJs();
   audio: any;
   questionAudio: any
+  dirname: any;
 
 
 
   constructor(public router: Router, public dialog: MatDialog) {
     try {
+      if (!pathImage()) {
+        this.dirname = "../../.."
+      } else {
+        this.dirname = pathImage();
+      }
       let infoRoute
       infoRoute = router.getCurrentNavigation().extras.state
       this.arrayQuestions = [...infoRoute]

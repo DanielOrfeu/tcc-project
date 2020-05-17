@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConnectionService } from 'ng-connection-service';
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { pathImage } from 'src/main';
 
 @Component({
   selector: 'app-form',
@@ -11,11 +12,17 @@ export class FormComponent implements OnInit {
   showForm: boolean = true;
   showLoading: boolean = false;
   showRetryMessage: boolean = false;
+  dirname: any;
 
   constructor(
     private connectionService: ConnectionService,
     private spinner: NgxSpinnerService
   ) {
+    if (!pathImage()) {
+      this.dirname = "../../.."
+    } else {
+      this.dirname = pathImage();
+    }
     this.connectionService.monitor().subscribe(isConnected => {
       if (isConnected) {
         this.loadingMode(5500)

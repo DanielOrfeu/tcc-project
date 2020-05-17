@@ -56,8 +56,14 @@
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
+import { environment } from './environments/environment';
 
-
+if (environment.ambiente !== "electron") {
+  (window as any).process = {
+    env: { DEBUG: undefined },
+  }; //server application debug
+} 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+

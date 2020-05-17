@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { pathImage } from 'src/main'
 
 @Component({
   selector: 'app-congratulations-dialog',
@@ -10,13 +11,18 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class CongratulationsDialogComponent implements OnInit {
   audio: any;
   congratulationsAudio: any;
+  dirname: any;
 
   constructor(
     public router: Router,
     private dialogRef: MatDialogRef<CongratulationsDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data
   ) {
-    console.log(data)
+    if (!pathImage()) {
+      this.dirname = "../../.."
+    } else {
+      this.dirname = pathImage();
+    }
   }
   
   ngOnInit(): void {
