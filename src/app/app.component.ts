@@ -8,11 +8,16 @@ import { pathImage } from 'src/main';
 })
 
 export class AppComponent implements OnInit {
-  dirname: any;
 
   ngOnInit(): void {
-    this.audio = document.getElementById('backgroundSound');
-    this.audio.volume = 0.1;
+    this.backgroundSound = document.getElementById('backgroundSound');
+    this.clickSound = document.getElementById('clickSound');
+    this.questionSound = document.getElementById('questionSound');
+    this.congratularionsSound = document.getElementById('congratularionsSound');
+    this.backgroundSound.volume = 0.1;
+    this.clickSound.volume = 0.2;
+    this.questionSound.volume = 0.2;
+    this.congratularionsSound.volume = 0.2;
   }
 
   constructor(){
@@ -24,5 +29,9 @@ export class AppComponent implements OnInit {
   }
 
   title = 'tcc-project';
-  audio: any;
+  dirname: any;
+  backgroundSound: any;
+  clickSound: any;
+  questionSound: any;
+  congratularionsSound: any;
 }

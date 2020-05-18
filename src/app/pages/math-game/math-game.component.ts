@@ -66,7 +66,6 @@ export class MathGameComponent implements OnInit, OnDestroy {
 
   ngOnDestroy():void {
     this.stopTimer();
-    this.audio.play();
   }
 
   getPosition(a: string){

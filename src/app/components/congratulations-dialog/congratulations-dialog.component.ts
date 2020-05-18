@@ -34,7 +34,6 @@ export class CongratulationsDialogComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.audio.play();
   }
 
   goToHome() {
