@@ -39,8 +39,6 @@ export class SelectModeComponent implements OnInit {
     } else {
       this.selectMode = false;
     }
-
-
   }
 
   changeDifficulty(difficulty: string){

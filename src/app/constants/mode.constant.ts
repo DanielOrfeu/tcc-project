@@ -3,7 +3,7 @@ import { quizEXP } from "./quiz.constant"
 
 export const Modes = [
     {
-        title: "Expressão aritimética",
+        title: "Expressão aritmética",
         specs: [NumbersEXP, ExpressionsEasy, ExpressionsMedium, Expressionshard]
     },
     {

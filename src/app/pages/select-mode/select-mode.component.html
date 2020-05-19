@@ -5,8 +5,8 @@
       <mat-grid-list cols="2" rowHeight="1:1" gutterSize="10px">
         <mat-grid-tile *ngFor="let mode of modes; let i = index">
           <div  style="display: flex; flex-direction: column;" class="mode" (click)="chooseGameMode(mode)">
-            <img *ngIf="mode.title === 'Expressão aritimética'" class="icon" src="{{dirname}}/assets/iconMath.png">
-            <img *ngIf="mode.title !== 'Expressão aritimética'" class="icon" src="{{dirname}}/assets/iconQuiz.png">
+            <img *ngIf="mode.title === 'Expressão aritmética'" class="icon" src="{{dirname}}/assets/iconMath.png">
+            <img *ngIf="mode.title === 'Visuoespacial e Expressão facial'" class="icon" src="{{dirname}}/assets/iconQuiz.png">
           </div>
         </mat-grid-tile>
       </mat-grid-list>
