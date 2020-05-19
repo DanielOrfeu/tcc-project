@@ -3,12 +3,6 @@
     height: 570px;
 }
 
-#home{
-    margin-left: 10px;
-    position: relative;
-    bottom: 500px;
-}
-
 .message{
     display: flex;
     flex-direction: column;
@@ -23,4 +17,14 @@
 
 .offline{
     max-width: 500px;
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    justify-content: center; 
+    display: flex;
 }
