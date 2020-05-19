@@ -1,6 +1,6 @@
 <img class="boardImg" src="{{dirname}}/assets/quadroNegro.png">
 <div class="container" *ngIf="selectMode">
-    <span style="font-family: chalkboard; color: white; font-size: 42px; margin-bottom: 60px;">Selecione o modo:</span>
+    <span class="selectText" >Selecione o modo:</span>
     <div style="margin-bottom: 20px;" class="table">
       <mat-grid-list cols="2" rowHeight="1:1" gutterSize="10px">
         <mat-grid-tile *ngFor="let mode of modes; let i = index">
@@ -14,7 +14,7 @@
     </div>
 </div>
 <div class="container" *ngIf="!selectMode">
-  <span style="font-family: chalkboard; color: white; font-size: 42px; margin-bottom: 60px;">Selecione a dificuldade:</span>
+  <span class="selectText" >Selecione a dificuldade:</span>
   <div style="margin-bottom: 20px;" class="tableDificulty">
     <div class="cards">
       <button mat-stroked-button (click)="changeDifficulty('easy')" color="Basic">Fácil</button>
