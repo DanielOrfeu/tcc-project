@@ -1,0 +1,96 @@
+@font-face {
+    font-family: chalkboard;
+    src: url('../../../assets/fonts/ChalkboardByMartaVanEck-gvpp.ttf') format('truetype');
+}
+
+.container{
+    position: relative;
+    top: 60px;
+}
+
+.person{
+    position: relative;
+    left: 70px;
+}
+
+.treina{
+    font-family: chalkboard;
+    color: white;
+    font-size: 56px;
+}
+
+.mentes{
+    font-family: chalkboard;
+    color: white;
+    font-size: 56px;
+    right: 83px;
+    top: 10px;
+    position: relative;
+}
+
+.divName{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 40px;
+    left: 25px;
+    transform: rotate(-5deg);
+}
+
+.boardImg{
+    position: relative;
+    z-index: -1;
+    bottom: 100px;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    position: relative;
+    top: 30px;
+}
+
+.divDimmer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.dimmerOverlay{
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    z-index: 999;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+}
+
+.insideBoard{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 300px;
+    left: 10px;
+}
+
+.material-icons{
+    color: white;
+}
+
+.contentView{
+    display: flex; 
+    flex-direction: row;
+    z-index: 1;
+}

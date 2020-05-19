@@ -1,0 +1,71 @@
+.btnCorrect:disabled{
+    background-color: #3adc23;
+    color: black
+}
+.btnIncorrect:disabled{
+    background-color: red;
+    color: white
+}
+.btnDefault{
+    background-color: blue;
+    color: white
+}
+
+.chars{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#questionImage{
+    height: 150px;
+    width: 200px;
+}
+
+.content-quiz{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row; 
+    margin-top: 15px; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.questionElements{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+}
+
+.questionBallon{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.balaoFala{
+    width: 100%;
+    height: 250px;
+
+}
+
+.question{
+    position: absolute;
+    top: 43px;
+    width: 300px;
+}
+
+.questionImage{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.answersElement{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

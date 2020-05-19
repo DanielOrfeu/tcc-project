@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "tcc-project": {
@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -56,6 +58,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "electron":{
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.electron.ts"
+                }
+              ]
             }
           }
         },
@@ -67,6 +77,9 @@
           "configurations": {
             "production": {
               "browserTarget": "tcc-project:build:production"
+            },
+            "electron": {
+              "browserTarget": "tcc-project:build:electron"
             }
           }
         },
@@ -119,6 +132,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tcc-project"
+    }
+  },
+  "defaultProject": "tcc-project",
+  "cli": {
+    "analytics": "04434bec-a531-413f-b53d-a354d4071ea2"
+  }
 }

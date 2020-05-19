@@ -1,0 +1,14 @@
+<div class="container">
+    <span style="font-size: 30px; margin-bottom: 25px;">Configurações</span>
+    <div class="item">
+        <span>Cor de fundo:</span>
+        <div class="colors" [ngStyle]="{'background-color': bg.color}" *ngFor="let bg of background" (click)="changeBackgroundColor(bg.color)"></div>
+    </div>
+    <div class="item">
+        <span>Musica:</span>
+        <span class="material-icons" (click)="stateMusic('on')">volume_up</span>
+        <span class="material-icons" (click)="stateMusic('off')">volume_off</span>
+    </div>
+    <span class="material-icons" routerLink="/">undo</span>
+</div>
+ 

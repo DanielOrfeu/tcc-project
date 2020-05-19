@@ -1,0 +1,53 @@
+.btnDefault{
+    background-color: #3adc23;
+    color: black
+}
+
+.btnBack{
+    background-color: red;
+    color: white
+}
+
+.chars{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+}
+
+.content-modal{
+    display: flex;
+    flex-direction: row;
+}
+
+.modalElements{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+}
+
+.questionBallon{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.balaoFala{
+    width: 100%;
+    height: 290px;
+}
+
+.congratulations{
+    position: absolute;
+    top: 81px;
+    left: 120px;
+    width: 300px;
+}
+
+.congratulationsButtons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}

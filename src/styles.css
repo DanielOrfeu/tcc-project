@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ngx-toastr/toastr.css";
+@import "../node_modules/intro.js/introjs.css";
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2aadea;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.material-icons{
+    font-size: 36px;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+    color: grey;
+}
+
+.left{
+    position: absolute;
+    left: 0px;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+}
+
+.space{
+    flex: 1;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
