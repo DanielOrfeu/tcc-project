@@ -7,7 +7,7 @@ export const Modes = [
         specs: [NumbersEXP, ExpressionsEasy, ExpressionsMedium, Expressionshard]
     },
     {
-        title: "Visuoespacial e Expressão facial",
+        title: "Quiz",
         specs: quizEXP
     },
 ]

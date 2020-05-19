@@ -32,7 +32,7 @@ export class SelectModeComponent implements OnInit {
   }
 
   chooseGameMode(mode: any) {
-    if (mode.title !== "Expressão aritimética") {
+    if (mode.title === "Quiz") {
       this.router.navigateByUrl('/quiz', {
         state: mode.specs
       })
