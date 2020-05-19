@@ -68,4 +68,50 @@ export const quizEXP = [
         ],
         correctAnswer: "Retângulo"
     },
+
+    //expressões faciais
+    {
+        question: "Um dia estava na faculdade e encontrei meu amigo marcos, ele me disse que tinha tirado 10 na prova, de acordo com a foto ele parece estar como?",
+        image: "/assets/imagesQuiz/feliz.png",
+        answers: [
+            "Feliz",
+            "Triste",
+            "Raiva",
+            "Pensativo"
+        ],
+        correctAnswer: "Feliz"
+    },
+    {
+        question: "Estava no ponto esperando meu ônibus, enquanto esperava fiquei com fome, reparei que tinha uma barraca de lanches perto do ponto, quando cheguei perto da barraca o dono da mesma reparou que estava com uma expressão diferente, de acordo com a foto, pareço estar como?",
+        image: "/assets/imagesQuiz/pensativo.jpg",
+        answers: [
+            "Feliz",
+            "Triste",
+            "Raiva",
+            "Pensativo"
+        ],
+        correctAnswer: "Pensativo"
+    },
+    {
+        question: "Um dia estava jogando video-game com meu amigo joão e acabei perdendo pra ele no jogo, de acordo com a foto, pareço estar como?",
+        image: "/assets/imagesQuiz/raiva.jpg",
+        answers: [
+            "Feliz",
+            "Triste",
+            "Raiva",
+            "Pensativo"
+        ],
+        correctAnswer: "Raiva"
+    },
+    {
+        question: "Um dia estava na faculdade e encontrei meu amigo marcos, ele me disse que tinha tirado 2 na prova, de acordo com a foto ele parece estar como?",
+        image: "/assets/imagesQuiz/triste.jpg",
+        answers: [
+            "Feliz",
+            "Triste",
+            "Raiva",
+            "Pensativo"
+        ],
+        correctAnswer: "Triste"
+    },
 ]
