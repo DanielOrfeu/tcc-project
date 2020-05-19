@@ -3,6 +3,12 @@
     height: 570px;
 }
 
+#home{
+    margin-left: 10px;
+    position: relative;
+    bottom: 500px;
+}
+
 .message{
     display: flex;
     flex-direction: column;
