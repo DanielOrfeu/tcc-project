@@ -41,19 +41,25 @@ export class SelectModeComponent implements OnInit {
     }
   }
 
-  changeDifficulty(difficulty: string){
-    if(difficulty === 'easy'){
-      this.router.navigateByUrl('/math', {
-        state: [this.modes[0].specs[0], this.modes[0].specs[1]]
-      })
-    }else if (difficulty === 'medium'){
-      this.router.navigateByUrl('/math', {
-        state: [this.modes[0].specs[0], this.modes[0].specs[2]]
-      })
-    } else {
-      this.router.navigateByUrl('/math', {
-        state: [this.modes[0].specs[0], this.modes[0].specs[3], true]
-      })
+  changeDifficulty(difficulty: string) {
+    switch (difficulty) {
+      case 'easy':
+        this.router.navigateByUrl('/math', {
+          state: [this.modes[0].specs[0], this.modes[0].specs[1]]
+        })
+        break;
+
+      case 'medium':
+        this.router.navigateByUrl('/math', {
+          state: [this.modes[0].specs[0], this.modes[0].specs[2]]
+        })
+        break;
+
+      case 'hard':
+        this.router.navigateByUrl('/math', {
+          state: [this.modes[0].specs[0], this.modes[0].specs[3], true]
+        })
+        break;
     }
   }
 
