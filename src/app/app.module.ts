@@ -17,7 +17,6 @@ import { ConfigComponent } from './pages/config/config.component';
 import { SelectModeComponent } from './pages/select-mode/select-mode.component';
 import { MathGameComponent } from './pages/math-game/math-game.component';
 import { QuizGameComponent } from './pages/quiz-game/quiz-game.component';
-import { DifficultyDialogComponent } from './components/difficulty-dialog/difficulty-dialog.component';
 import { FormComponent } from './pages/form/form.component';
 import { CongratulationsDialogComponent } from './components/congratulations-dialog/congratulations-dialog.component';
 import { NgDimmerModule } from 'ng-dimmer';
@@ -31,7 +30,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SelectModeComponent,
     MathGameComponent,
     QuizGameComponent,
-    DifficultyDialogComponent,
     FormComponent,
     CongratulationsDialogComponent,
   ],
@@ -49,7 +47,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NgxSpinnerModule
   ],
   entryComponents: [
-    DifficultyDialogComponent,
     CongratulationsDialogComponent,
   ],
   providers: [],
