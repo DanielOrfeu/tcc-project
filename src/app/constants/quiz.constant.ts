@@ -1,5 +1,4 @@
 export const quizEXP = [
-    //figuras geométricas 3d
     {
         question: "Um dia eu e meus amigos fomos lá em casa para brincar com jogos de tabuleiros e todos os jogos que eu tenho precisam usar um dado, o joão que é meu amigo me perguntou qual a figura geométrica do dado mas acabei me esquecendo, você pode me ajudar a responder?",
         image: "/assets/imagesQuiz/cubo.jpg",
@@ -55,8 +54,6 @@ export const quizEXP = [
         ],
         correctAnswer: "Cone"
     },
-
-    //figuras geométricas 2d
     {
         question: "Eu gosto muito de ler e fiquei observando o formato dos meus livros mas não lembro o nome dessa forma, você pode me ajudar a lembrar?",
         image: "/assets/imagesQuiz/retangulo.jpg",
@@ -68,8 +65,6 @@ export const quizEXP = [
         ],
         correctAnswer: "Retângulo"
     },
-
-    //expressões faciais
     {
         question: "Um dia estava na faculdade e encontrei meu amigo marcos, ele me disse que tinha tirado 10 na prova, de acordo com a foto ele parece estar como?",
         image: "/assets/imagesQuiz/feliz.png",
