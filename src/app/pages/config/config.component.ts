@@ -30,9 +30,9 @@ export class ConfigComponent implements OnInit {
 
   stateMusic(state:string){
     if(state === 'on'){
-      this.music.play();
+      this.music.volume = 0.1;
     } else {
-      this.music.pause();
+      this.music.volume = 0;
     }
   }
 }

@@ -49,16 +49,24 @@ export class QuizGameComponent implements OnInit {
     this.startTimer();
     this.audio = document.getElementById('backgroundSound');
     this.questionAudio = document.getElementById('questionSound');
-    this.questionAudio.play();
-    if (this.audio.duration > 0 && !this.audio.paused)
-      this.audio.pause();
+
+    this.switchSounds(this.questionAudio, 1200);
+  }
+
+  switchSounds(secundarySound, ms){
+    this.audio.pause();
+    secundarySound.play();
+    setTimeout(() => {
+      secundarySound.play();
+    }, 200);
+    setTimeout(() => {
+      this.audio.play();
+    }, ms);
   }
 
   ngOnDestroy(): void {
     try {
-
       this.stopTimer();
-      this.audio.play();
     } catch{
       this.router.navigateByUrl("/select")
     }
@@ -93,7 +101,7 @@ export class QuizGameComponent implements OnInit {
           }
         });
       } else {
-        this.questionAudio.play();
+        this.switchSounds(this.questionAudio, 1200);
       }
     }, 2000);
 

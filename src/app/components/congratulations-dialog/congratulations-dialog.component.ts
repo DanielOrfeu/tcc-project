@@ -28,12 +28,18 @@ export class CongratulationsDialogComponent implements OnInit {
   ngOnInit(): void {
     this.audio = document.getElementById('backgroundSound');
     this.congratulationsAudio = document.getElementById('congratularionsSound');
-    this.congratulationsAudio.play();
-    if (this.audio.duration > 0 && !this.audio.paused)
-      this.audio.pause();
+    this.switchSounds(this.congratulationsAudio, 2200)
   }
 
-  ngOnDestroy(): void {
+  switchSounds(secundarySound, ms){
+    this.audio.pause();
+    secundarySound.play();
+    setTimeout(() => {
+      secundarySound.play();
+    }, 200);
+    setTimeout(() => {
+      this.audio.play();
+    }, ms);
   }
 
   goToHome() {

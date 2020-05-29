@@ -77,7 +77,7 @@ export const quizEXP = [
         correctAnswer: "Feliz"
     },
     {
-        question: "Estava no ponto esperando meu ônibus, enquanto esperava fiquei com fome, reparei que tinha uma barraca de lanches perto do ponto, quando cheguei perto da barraca o dono da mesma reparou que estava com uma expressão diferente, de acordo com a foto, pareço estar como?",
+        question: "Estava no ponto esperando meu ônibus, enquanto esperava senti fome e reparei que tinha uma barraca de lanches por perto. Quando cheguei na barraca, o dono da mesma reparou que estava com uma expressão diferente, de acordo com a foto, pareço estar como?",
         image: "/assets/imagesQuiz/pensativo.jpg",
         answers: [
             "Feliz",
@@ -99,7 +99,7 @@ export const quizEXP = [
         correctAnswer: "Raiva"
     },
     {
-        question: "Um dia estava na faculdade e encontrei meu amigo marcos, ele me disse que tinha tirado 2 na prova, de acordo com a foto ele parece estar como?",
+        question: "Um dia estava na faculdade e encontrei minha amiga Helena. Ela me disse que tinha tirado 2 na prova, de acordo com a foto ela parece estar como?",
         image: "/assets/imagesQuiz/triste.jpg",
         answers: [
             "Feliz",

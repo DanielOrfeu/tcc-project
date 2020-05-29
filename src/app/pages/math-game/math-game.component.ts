@@ -59,9 +59,6 @@ export class MathGameComponent implements OnInit, OnDestroy {
     this.startTimer();
     this.audio = document.getElementById('backgroundSound');
     this.clickAudio = document.getElementById('clickSound');
-
-    if (this.audio.duration > 0 && !this.audio.paused)
-      this.audio.pause();
   }
 
   ngOnDestroy():void {
@@ -106,7 +103,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
       this.toastr.warning('Jogo já finalizado! Caso queira, inicie um novo jogo.');
     }
     if(this.clicks > 9)
-      this.clickAudio.play();
+     this.clickAudio.play()
   }
 
   clickHelp(){
