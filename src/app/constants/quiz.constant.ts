@@ -1,6 +1,6 @@
 export const quizEXP = [
     {
-        question: "Um dia eu e meus amigos fomos lá em casa para brincar com jogos de tabuleiros e todos os jogos que eu tenho precisam usar um dado, o joão que é meu amigo me perguntou qual a figura geométrica do dado mas acabei me esquecendo, você pode me ajudar a responder?",
+        question: "Um dia eu e meus amigos fomos lá em casa para brincar com jogos de tabuleiros e todos os jogos que eu tenho precisam usar um dado, o joão que é meu amigo me perguntou qual a figura geométrica do dado, mas acabei me esquecendo, você pode me ajudar a responder?",
         image: "/assets/imagesQuiz/cubo.jpg",
         answers: [
             "Cubo",
@@ -11,7 +11,7 @@ export const quizEXP = [
         correctAnswer: "Cubo"
     },
     {
-        question: "Eu gosto muito de jogar futebol com meus amigos, mas as vezes fico em duvida de qual é a figura geométrica da bola, você lembra qual é?",
+        question: "Eu gosto muito de jogar futebol com meus amigos, mas as vezes fico em dúvida de qual é a figura geométrica da bola, você lembra qual é?",
         image: "/assets/imagesQuiz/esfera.jpg",
         answers: [
             "Cubo",
@@ -33,7 +33,7 @@ export const quizEXP = [
         correctAnswer: "Pirâmide"
     },
     {
-        question: "Eu gosto muito de castelos, acho eles muito lindos e fico muito encantando com em como eles são construídos, você sabe o nome da forma geométrica desses blocos?",
+        question: "Eu gosto muito de castelos, acho eles muito lindos e fico muito encantando em como eles são construídos, você sabe o nome da forma geométrica desses blocos?",
         image: "/assets/imagesQuiz/paralelepipedo.jpg",
         answers: [
             "Cubo",
@@ -44,7 +44,7 @@ export const quizEXP = [
         correctAnswer: "Paralelepípedo"
     },
     {
-        question: "Gosto de fazer exercícios, principalmente de futebol porque posso treinar com meus amigos, nós gostamos muito de um treino de correr passando entre uns objetos mas não lembro o nome deles, você pode me ajudar a lembrar o nome dele?",
+        question: "Gosto de fazer exercícios, principalmente de futebol porque posso treinar com meus amigos, nós gostamos muito de um treino de correr passando entre uns objetos, mas não lembro o nome deles, você pode me ajudar a lembrar o nome dele?",
         image: "/assets/imagesQuiz/cone.jpg",
         answers: [
             "Cubo",
@@ -55,7 +55,7 @@ export const quizEXP = [
         correctAnswer: "Cone"
     },
     {
-        question: "Eu gosto muito de ler e fiquei observando o formato dos meus livros mas não lembro o nome dessa forma, você pode me ajudar a lembrar?",
+        question: "Eu gosto muito de ler e fiquei observando o formato dos meus livros, mas não lembro o nome dessa forma, você pode me ajudar a lembrar?",
         image: "/assets/imagesQuiz/retangulo.jpg",
         answers: [
             "Quadrado",

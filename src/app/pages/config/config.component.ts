@@ -24,10 +24,6 @@ export class ConfigComponent implements OnInit {
     document.body.style.backgroundColor = color;
   }
 
-  changeFontColor(color:string){
-    document.body.style.color = color;
-  }
-
   stateMusic(state:string){
     if(state === 'on'){
       this.music.volume = 0.1;

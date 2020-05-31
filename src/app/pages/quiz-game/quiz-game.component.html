@@ -5,14 +5,14 @@
                 <img src="{{dirname}}/assets/speakMale.png">
             </div>
             <div class="questionElements">
-                <div class="questionBallon" data-step="1" data-intro="Neste modo temos um jogo de perguntas e respostas onde o personagem trás uma questão" data-position="left">
+                <div class="questionBallon" data-step="1" data-intro="Neste modo temos um jogo de perguntas e respostas onde o personagem traz uma questão." data-position="left">
                     <img class="balaoFala" src="{{dirname}}/assets/balaoFala.png">
                     <span class="question">{{questionComp.question}}</span>
                 </div>
-                <div class="questionImage" data-step="2" data-intro="Logo abaixo temos uma imagem referente a pergunta feita pelo personagem" data-position="top">
+                <div class="questionImage" data-step="2" data-intro="Logo abaixo temos uma imagem referente a pergunta feita pelo personagem." data-position="top">
                     <img id="questionImage" src='{{dirname}}{{questionComp.image}}'>
                 </div>
-                <div class="answersElement" data-step="3" data-intro="Aqui nós temos os botões com as respostas onde uma delas está correta, logo após você responder o personagem mostrar qual é a resposta correta" data-position="top">
+                <div class="answersElement" data-step="3" data-intro="Aqui nós temos os botões com as respostas onde uma delas está correta, logo após você responder o personagem mostrar qual é a resposta correta." data-position="top">
                     <div style="margin-left: 10px; margin-right: 10px; " *ngFor="let answer of questionComp.answers">
                         <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="!clicked" class="btnDefault">{{answer}}</button>
                         <button (click)="verifyAnswer(answer)" mat-raised-button *ngIf="clicked" [ngClass]="{'btnCorrect': answer == questionComp.correctAnswer, 'btnIncorrect': answer != questionComp.correctAnswer}" disabled>{{answer}}</button>

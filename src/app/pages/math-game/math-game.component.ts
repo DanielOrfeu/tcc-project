@@ -96,7 +96,7 @@ export class MathGameComponent implements OnInit, OnDestroy {
         this.compareSquare(this.resp[square], true);
       })
       .catch( () => {
-        this.toastr.error('Erro inesperado. Voltando para a tela de seleção');
+        this.toastr.error('Erro inesperado. Voltando para a tela de seleção.');
         this.router.navigateByUrl("/select")
       })
     } else {
