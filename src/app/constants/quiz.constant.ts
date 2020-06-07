@@ -1,6 +1,6 @@
 export const quizEXP = [
     {
-        question: "Um dia eu e meus amigos fomos lá em casa para brincar com jogos de tabuleiros e todos os jogos que eu tenho precisam usar um dado, o joão que é meu amigo me perguntou qual a figura geométrica do dado, mas acabei me esquecendo, você pode me ajudar a responder?",
+        question: "Um dia eu e meus amigos fomos em casa para brincar com jogos de tabuleiros e todos que eu tenho precisam usar um dado. O João que é meu amigo me perguntou qual a forma geométrica do dado, mas acabei me esquecendo. Você pode me ajudar a responder?",
         image: "/assets/imagesQuiz/cubo.jpg",
         answers: [
             "Cubo",
@@ -11,7 +11,7 @@ export const quizEXP = [
         correctAnswer: "Cubo"
     },
     {
-        question: "Eu gosto muito de jogar futebol com meus amigos, mas as vezes fico em dúvida de qual é a figura geométrica da bola, você lembra qual é?",
+        question: "Eu gosto muito de jogar futebol com meus amigos, mas as vezes fico em dúvida de qual é a forma geométrica da bola. Você lembra qual é?",
         image: "/assets/imagesQuiz/esfera.jpg",
         answers: [
             "Cubo",
@@ -22,7 +22,7 @@ export const quizEXP = [
         correctAnswer: "Esfera"
     },
     {
-        question: "Os egípcios são muito conhecidos pelas suas estruturas gigantescas, você lembra o nome dessas?",
+        question: "Os egípcios são muito conhecidos pelas suas estruturas gigantescas. Você lembra o nome dessas estruturas?",
         image: "/assets/imagesQuiz/piramide.jpg",
         answers: [
             "Cubo",
@@ -33,7 +33,7 @@ export const quizEXP = [
         correctAnswer: "Pirâmide"
     },
     {
-        question: "Eu gosto muito de castelos, acho eles muito lindos e fico muito encantando em como eles são construídos, você sabe o nome da forma geométrica desses blocos?",
+        question: "Eu gosto muito de castelos. Acho eles muito lindos e fico muito encantando em como eles são construídos. Você sabe o nome da forma geométrica dos blocos que compõem os castelos?",
         image: "/assets/imagesQuiz/paralelepipedo.jpg",
         answers: [
             "Cubo",
@@ -44,7 +44,7 @@ export const quizEXP = [
         correctAnswer: "Paralelepípedo"
     },
     {
-        question: "Gosto de fazer exercícios, principalmente de futebol porque posso treinar com meus amigos, nós gostamos muito de um treino de correr passando entre uns objetos, mas não lembro o nome deles, você pode me ajudar a lembrar o nome dele?",
+        question: "Gosto de fazer exercícios, principalmente de futebol porque posso treinar com meus amigos. Nós gostamos muito de um treino de correr passando entre uns objetos, mas não lembro o nome deles. Você pode me ajudar a lembrar o nome dele?",
         image: "/assets/imagesQuiz/cone.jpg",
         answers: [
             "Cubo",
@@ -55,7 +55,7 @@ export const quizEXP = [
         correctAnswer: "Cone"
     },
     {
-        question: "Eu gosto muito de ler e fiquei observando o formato dos meus livros, mas não lembro o nome dessa forma, você pode me ajudar a lembrar?",
+        question: "Eu gosto muito de ler e fiquei observando o formato dos meus livros, mas não lembro o nome dessa forma. Você pode me ajudar a lembrar?",
         image: "/assets/imagesQuiz/retangulo.jpg",
         answers: [
             "Quadrado",
@@ -66,7 +66,7 @@ export const quizEXP = [
         correctAnswer: "Retângulo"
     },
     {
-        question: "Um dia estava na faculdade e encontrei meu amigo marcos, ele me disse que tinha tirado 10 na prova, de acordo com a foto ele parece estar como?",
+        question: "Um dia estava na faculdade e encontrei meu amigo Marcos. Ele me disse que tinha tirado 10 na prova. De acordo com a foto, ele parece estar como?",
         image: "/assets/imagesQuiz/feliz.png",
         answers: [
             "Feliz",
@@ -77,7 +77,7 @@ export const quizEXP = [
         correctAnswer: "Feliz"
     },
     {
-        question: "Estava no ponto esperando meu ônibus, enquanto esperava senti fome e reparei que tinha uma barraca de lanches por perto. Quando cheguei na barraca, o dono da mesma reparou que estava com uma expressão diferente, de acordo com a foto, pareço estar como?",
+        question: "Estava no ponto esperando meu ônibus. Enquanto esperava senti fome e reparei que tinha uma barraca de lanches por perto. Quando cheguei na barraca, o dono da mesma reparou que estava com uma expressão diferente. De acordo com a foto, pareço estar como?",
         image: "/assets/imagesQuiz/pensativo.jpg",
         answers: [
             "Feliz",
@@ -88,7 +88,7 @@ export const quizEXP = [
         correctAnswer: "Pensativo"
     },
     {
-        question: "Um dia estava jogando video-game com meu amigo joão e acabei perdendo pra ele no jogo, de acordo com a foto, pareço estar como?",
+        question: "Um dia estava jogando video-game com meu amigo João e acabei perdendo pra ele no jogo. De acordo com a foto, pareço estar como?",
         image: "/assets/imagesQuiz/raiva.jpg",
         answers: [
             "Feliz",
@@ -99,7 +99,7 @@ export const quizEXP = [
         correctAnswer: "Raiva"
     },
     {
-        question: "Um dia estava na faculdade e encontrei minha amiga Helena. Ela me disse que tinha tirado 2 na prova, de acordo com a foto ela parece estar como?",
+        question: "Um dia estava na faculdade e encontrei minha amiga Helena. Ela me disse que tinha tirado 2 na prova. De acordo com a foto, ela parece estar como?",
         image: "/assets/imagesQuiz/triste.jpg",
         answers: [
             "Feliz",
