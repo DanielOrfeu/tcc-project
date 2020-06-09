@@ -1,6 +1,6 @@
 export const quizEXP = [
     {
-        question: "Um dia eu e meus amigos fomos em casa para brincar com jogos de tabuleiros e todos que eu tenho precisam usar um dado. O João que é meu amigo me perguntou qual a forma geométrica do dado, mas acabei me esquecendo. Você pode me ajudar a responder?",
+        question: "Um dia eu e meus amigos fomos em casa para brincar com jogos de tabuleiros e todos que eu tenho precisam usar um dado. O João, que é meu amigo, me perguntou qual a forma geométrica do dado, mas acabei me esquecendo. Você pode me ajudar a responder?",
         image: "/assets/imagesQuiz/cubo.jpg",
         answers: [
             "Cubo",
